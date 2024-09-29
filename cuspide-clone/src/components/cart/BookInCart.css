@@ -1,0 +1,61 @@
+table {
+	border-collapse: collapse;
+	width: 100%;
+	color: var(--colorText);
+	text-align: left;
+}
+
+tr th {
+	border-bottom: 2px solid rgb(202, 202, 202);
+	font-size: 0.9rem;
+	font-weight: 600;
+	letter-spacing: 0.1rem;
+}
+
+tbody tr td {
+	border-bottom: 1px solid rgb(202, 202, 202);
+	padding-top: 8px;
+}
+tbody tr td img {
+	width: 100%;
+}
+.remove-button {
+	margin-top: 3rem;
+}
+
+.input-book-in-cart {
+	width: 90px;
+	display: flex;
+	justify-content: center;
+	justify-content: center;
+	border: 1px solid rgb(202, 202, 202);
+	border-radius: 3px;
+}
+
+.input-book-in-cart input[type='number'] {
+	width: 30px;
+	text-align: center;
+	border: none;
+	text-align: center;
+}
+.input-book-in-cart input[type='button'] {
+	width: 30px;
+	border: none;
+	padding: 5px 10px;
+	border-radius: 1px;
+	cursor: pointer;
+	background-color: none;
+	text-align: center;
+}
+
+/* Para navegadores Webkit (Chrome, Safari, Edge) */
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* Para Firefox */
+input[type='number'] {
+	-moz-appearance: textfield;
+}

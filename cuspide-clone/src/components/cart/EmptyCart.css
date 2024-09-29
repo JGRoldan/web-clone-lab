@@ -1,0 +1,16 @@
+.container-empty-cart {
+	text-align: center;
+	margin: 50px 0;
+}
+
+.container-empty-cart h4 {
+	font-weight: 400;
+	margin-bottom: 1rem;
+}
+.cart-main-btn {
+	background-color: var(--orangeText);
+	color: var(--whiteText);
+	padding: 8px 15px;
+	border-radius: 8px;
+	font-weight: 700;
+}

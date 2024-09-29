@@ -17,8 +17,7 @@ const WishList = () => {
 
 	//Agregar libros al carrito
 	const onHandleAddClick = (e) => {
-		const bookID =
-			e.target.parentElement.parentElement.parentElement.dataset.id
+		const bookID = e.target.closest('.row').dataset.id
 		const bookFiltered = bookInWishList.find((book) => book.id === bookID)
 		addBookToCart(bookFiltered)
 		removeBookFromWishList(bookID)
