@@ -1,10 +1,15 @@
 table {
 	border-collapse: collapse;
 	width: 100%;
+	color: var(--colorText);
+	text-align: left;
 }
 
 tr th {
 	border-bottom: 2px solid rgb(202, 202, 202);
+	font-size: 0.9rem;
+	font-weight: 600;
+	letter-spacing: 0.1rem;
 }
 
 tbody tr td {
@@ -18,4 +23,28 @@ tbody tr td {
 }
 .add-to-cart:hover {
 	color: #334862;
+}
+
+p {
+	text-align: center;
+	margin-top: 2rem;
+	font-weight: 300;
+}
+
+h2 {
+	color: var(--acentText);
+	font-weight: 400;
+	margin: 1.6rem 0;
+}
+
+.remove-button {
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+.remove-button svg {
+	stroke: var(--acentText);
+}
+.remove-button svg:hover {
+	stroke: var(--blackText);
 }

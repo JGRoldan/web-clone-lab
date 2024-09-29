@@ -7,7 +7,51 @@
 
 .book {
 	width: 200px;
+	height: auto;
+	position: relative;
+	text-align: center;
+	padding: 10px;
 }
 .image-book img {
-	width: 80%;
+	width: 90%;
+}
+
+.book-title {
+	font-size: 14px;
+	color: var(--orangeText);
+	margin: 0;
+	text-align: left;
+	margin-left: 20px;
+}
+.book-author,
+.book-price {
+	font-size: 14px;
+	text-align: left;
+	margin: 0;
+	margin-left: 20px;
+}
+
+.wish-button {
+	color: white;
+	border: none;
+	font-size: 16px;
+	padding: 5px 10px;
+	border-radius: 50%;
+	width: 40px;
+	cursor: pointer;
+	background: none;
+	position: absolute;
+	top: 2%;
+	right: 10%;
+}
+
+.wish-button svg {
+	stroke: red;
+	display: block;
+	margin: auto;
+}
+
+.wish-button svg:hover {
+	stroke: red;
+	fill: red;
 }

@@ -6,6 +6,7 @@ import Aside from '@/components/aside/Aside.jsx'
 import Book from '@/components/book/Book.jsx'
 import WishListPage from '@/pages/WishListPage'
 import CartPage from '@/pages/CartPage'
+import NotFound from '@/pages/NotFound'
 
 import './App.css'
 
@@ -26,6 +27,7 @@ function App() {
 					/>
 					<Route path='/lista-deseos' element={<WishListPage />} />
 					<Route path='/carrito' element={<CartPage />} />
+					<Route path='*' element={<NotFound />} />
 				</Routes>
 			</Router>
 			<section></section>

@@ -1,9 +1,10 @@
 import WishList from '@/components/wishList/WishList.jsx'
+import '@/components/wishList/WishList.css'
 
 const WishListPage = () => {
 	return (
 		<>
-			<h2>Lista de deseos</h2>
+			<h2>Mi lista de deseos</h2>
 			<WishList />
 		</>
 	)

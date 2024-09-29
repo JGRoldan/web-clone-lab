@@ -1,36 +1,50 @@
 import { useBookStore } from '@/store/useBookStore.js'
 import './WishList.css'
 import { convertCurrency } from '@/util/convertCurrency.js'
-import { useEffect } from 'react'
 
 const WishList = () => {
 	const bookInWishList = useBookStore((state) => state.bookInWishList)
-	const remoreBookFromWishList = useBookStore(
+	const removeBookFromWishList = useBookStore(
 		(state) => state.removeFromWishList
 	)
 	const addBookToCart = useBookStore((state) => state.addToCart)
-	const bookInCart = useBookStore((state) => state.bookInCart)
 
 	//Borrar libros de la lista de deseos
 	const onHandleRemoveClick = (e) => {
-		const bookID = e.target.parentElement.parentElement.dataset.id
-		remoreBookFromWishList(bookID)
+		const bookID = e.target.closest('.row').dataset.id
+		removeBookFromWishList(bookID)
 	}
 
 	//Agregar libros al carrito
 	const onHandleAddClick = (e) => {
-		const bookID = e.target.parentElement.parentElement.dataset.id
+		const bookID =
+			e.target.parentElement.parentElement.parentElement.dataset.id
 		const bookFiltered = bookInWishList.find((book) => book.id === bookID)
 		addBookToCart(bookFiltered)
-		remoreBookFromWishList(bookID)
+		removeBookFromWishList(bookID)
 	}
 
-	useEffect(() => {
-		console.log(bookInCart)
-	}, [bookInCart])
-
 	return bookInWishList.length === 0 ? (
-		<span>No se han añadido productos a la lista de deseos</span>
+		<>
+			<table>
+				<thead>
+					<tr>
+						<th></th>
+						<th></th>
+						<th>Nombre del libro</th>
+						<th>Precio por unidad</th>
+						<th>Estado de inventario</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+			<p>No se han añadido productos a la lista de deseos</p>
+		</>
 	) : (
 		<table>
 			<thead>
@@ -47,10 +61,32 @@ const WishList = () => {
 				{bookInWishList.map(({ id, title, price, poster }) => {
 					let convertPrice = convertCurrency(price)
 					return (
-						<tr key={id} data-id={id}>
+						<tr key={id} className='row' data-id={id}>
 							<td>
-								<button onClick={onHandleRemoveClick}>
-									Borrar
+								<button
+									onClick={onHandleRemoveClick}
+									className='remove-button'
+								>
+									<svg
+										xmlns='http://www.w3.org/2000/svg'
+										width={24}
+										height={24}
+										viewBox='0 0 24 24'
+										fill='none'
+										stroke='currentColor'
+										strokeWidth={1}
+										strokeLinecap='round'
+										strokeLinejoin='round'
+										className='icon icon-tabler icons-tabler-outline icon-tabler-circle-x'
+									>
+										<path
+											stroke='none'
+											d='M0 0h24v24H0z'
+											fill='none'
+										/>
+										<path d='M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0' />
+										<path d='M10 10l4 4m0 -4l-4 4' />
+									</svg>
 								</button>
 							</td>
 							<td>
@@ -60,15 +96,17 @@ const WishList = () => {
 									width={100}
 								/>
 							</td>
-							<td>{title}</td>
+							<td>
+								<span className='add-to-cart'>{title}</span>
+							</td>
 							<td>{convertPrice}</td>
-							<td>Disponible</td>
+							<td>En stock</td>
 							<td>
 								<a
 									className='add-to-cart'
 									onClick={onHandleAddClick}
 								>
-									Agregar al carrito
+									Añadir al carrito
 								</a>
 							</td>
 						</tr>
