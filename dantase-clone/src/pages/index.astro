@@ -1,0 +1,68 @@
+---
+import About from '@/components/About.astro'
+import Layout from '../layouts/Layout.astro'
+import Company from '@/components/Company.astro'
+import { ImageSlider } from '@/components/ImageSlider.jsx'
+import {
+	upWardData,
+	wonderblyData,
+	burberryData,
+	farFetchData,
+	freshaData,
+	getYourGuideData,
+} from '@/data/MediaCompanyData.js'
+import { companyData } from '@/data/CompanyData.js'
+import { aboutData } from '@/data/About'
+---
+
+<Layout title='Dan Tase - Product Design Director.'>
+	<main class='flex flex-col gap-48 mx-auto w-[90%]'>
+		<h2 class='font-spectral font-light text-[120px]'>
+			Product Design & Leadership
+			<span>for</span>
+			start-ups and large orgs.
+		</h2>
+		<About data={aboutData[0]} />
+		<Company data={companyData[0]} />
+		<ImageSlider data={upWardData} />
+
+		<Company data={companyData[1]} />
+		<ImageSlider data={wonderblyData} />
+
+		<Company data={companyData[2]} />
+		<ImageSlider data={getYourGuideData} />
+
+		<Company data={companyData[3]} />
+		<ImageSlider data={farFetchData} />
+
+		<Company data={companyData[4]} />
+		<ImageSlider data={freshaData} />
+
+		<Company data={companyData[5]} />
+		<ImageSlider data={burberryData} />
+
+		<h2 class='font-spectral font-light text-[120px]'>
+			Let's push <br />things <span>forward</span>.
+		</h2>
+		<About data={aboutData[1]} />
+		<footer class='text-center pb-2'>
+			Dan Tase Clone - Made by <a
+				href='https://github.com/JGRoldan/'
+				target='_blank'
+				rel='noopener noreferrer'
+				class='text-blue-700'
+			>
+				JGRoldan
+			</a> with ❤
+		</footer>
+	</main>
+</Layout>
+
+<style>
+	h2 {
+		line-height: 9rem;
+	}
+	h2 span {
+		font-style: italic;
+	}
+</style>

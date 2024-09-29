@@ -1,0 +1,73 @@
+---
+import Header from '@/components/Header.astro'
+import '@fontsource-variable/work-sans'
+import '@fontsource/spectral/200.css'
+import '@fontsource/spectral/300.css'
+import '@fontsource/spectral/400.css'
+import '@fontsource/spectral/200-italic.css'
+
+interface Props {
+	title: string
+}
+
+const { title } = Astro.props
+---
+
+<!doctype html>
+<html lang='es'>
+	<head>
+		<meta charset='UTF-8' />
+		<meta name='description' content='Astro description' />
+		<meta name='viewport' content='width=device-width' />
+		<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+		<title>{title}</title>
+	</head>
+	<body class='container w-screen mx-auto'>
+		<Header />
+		<slot />
+	</body>
+</html>
+<style is:global>
+	:root {
+		--background: #fff;
+	}
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+	html {
+		background: var(--background);
+		font-family: 'Work Sans Variable', sans-serif;
+	}
+	/* Personalización del scroll para navegadores Webkit */
+	.custom-scrollbar::-webkit-scrollbar {
+		width: 12px; /* Ancho del scrollbar */
+	}
+
+	.custom-scrollbar::-webkit-scrollbar-thumb {
+		background-color: #4a5568; /* Color de la barra */
+		border-radius: 6px; /* Redondear los bordes */
+		border: 3px solid transparent; /* Añadir un borde alrededor */
+	}
+
+	.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+		background-color: #2d3748; /* Cambiar el color al hacer hover */
+	}
+
+	.custom-scrollbar::-webkit-scrollbar-track {
+		background-color: #edf2f7; /* Color del fondo de la pista */
+		border-radius: 6px;
+	}
+
+	/* Personalización del scroll para Firefox */
+	.custom-scrollbar {
+		scrollbar-width: thin; /* Hace que el scroll sea más delgado */
+		scrollbar-color: #4a5568 #edf2f7; /* Color de la barra y la pista */
+	}
+
+	/* Si deseas más control sobre el diseño en general */
+	.custom-scrollbar {
+		overscroll-behavior: contain; /* Controla cómo se comporta el scroll cuando se alcanza el final */
+	}
+</style>

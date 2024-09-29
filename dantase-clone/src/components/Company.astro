@@ -1,0 +1,37 @@
+---
+import Pill from './Pill.astro'
+import { Image } from 'astro:assets'
+
+const { data } = Astro.props
+const { logo, titleSpan, restTitle, paragraphs, pills, colorSpan } = data
+---
+
+<div class='grid grid-cols-5 gap-4 mt-10'>
+	<div class='col-span-2'>
+		<img
+			src={logo}
+			alt=`Logo de la empresa ${colorSpan}`
+			width='100'
+			height='100'
+			loading='lazy'
+		/>
+	</div>
+	<div class='col-span-3 text-xl flex flex-col gap-8'>
+		<p class='text-5xl leading-[3.3rem]'>
+			<span class={`text-${colorSpan}`}>
+				{titleSpan}
+			</span>
+			{restTitle}
+		</p>
+		{paragraphs.map((p: string) => <p class='paragraph'>{p}</p>)}
+		<div class='flex gap-10'>
+			{pills.map((p: string) => <Pill pillText={p} />)}
+		</div>
+	</div>
+</div>
+
+<style>
+	.paragraph {
+		text-align: justify;
+	}
+</style>

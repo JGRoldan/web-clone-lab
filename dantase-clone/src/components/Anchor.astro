@@ -1,0 +1,11 @@
+---
+const { anchorText, anchorColor, anchorLink } = Astro.props
+---
+
+<a
+	href=`/${anchorLink}`
+	rel='noopener noreferer'
+	class=`border-b-2 ${anchorColor} hover:text-slate-800 pb-2`
+>
+	{anchorText}
+</a>
