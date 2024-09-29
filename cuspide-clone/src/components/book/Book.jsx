@@ -5,19 +5,12 @@ import './Book.css'
 const Book = () => {
 	const bookData = useBookStore((state) => state.bookData)
 	const fetchData = useBookStore((state) => state.setBookData)
-	const wishList = useBookStore((state) => state.bookInWishList)
 	const addToWhishList = useBookStore((state) => state.addToWhishList)
-
-	//Agregar libros al carrito
-	// const onHandleClick = (e) => {
-	// 	const bookID = e.target.parentElement.parentElement.dataset.id
-	// 	const bookFiltered = bookData.filter((book) => book.id === bookID)
-	// 	addToCart(bookFiltered)
-	// }
 
 	const onHandleClickWhishList = (e) => {
 		const bookID = e.target.parentElement.parentElement.dataset.id
 		const bookFiltered = bookData.find((book) => book.id === bookID)
+		console.log(bookFiltered)
 		addToWhishList(bookFiltered)
 	}
 

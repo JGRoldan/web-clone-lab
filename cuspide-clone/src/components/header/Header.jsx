@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import './Header.css'
 
 const Header = () => {
@@ -13,7 +14,7 @@ const Header = () => {
 			</form>
 			<div className='right-nav'>
 				<a href='#'>Acceder / Registrarme</a>
-				<a href='#'>Lista de deseos ❤</a>
+				<Link to={`lista-deseos`}>Lista de deseos ❤</Link>
 				<a href='#'>Carrito 🛒</a>
 			</div>
 		</header>
