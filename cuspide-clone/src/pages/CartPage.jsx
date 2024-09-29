@@ -1,5 +1,11 @@
+import Cart from '@/components/cart/Cart.jsx'
+
 const CartPage = () => {
-	return <h1>Carrito de compras</h1>
+	return (
+		<>
+			<Cart />
+		</>
+	)
 }
 
 export default CartPage
