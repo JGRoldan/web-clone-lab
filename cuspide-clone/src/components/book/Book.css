@@ -1,0 +1,13 @@
+.container-book {
+	width: 100%;
+	columns: 6 auto;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.book {
+	width: 200px;
+}
+.image-book img {
+	width: 80%;
+}

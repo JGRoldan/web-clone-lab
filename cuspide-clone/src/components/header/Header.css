@@ -1,0 +1,38 @@
+header {
+	margin-top: 2rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	font-family: poppins, 'sans-serif';
+	font-size: 15px;
+}
+
+header img {
+	width: 18%;
+}
+
+.center-nav {
+	flex-grow: 1;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+.center-nav input[type='text'] {
+	width: 70%;
+	padding: 0.3rem;
+	border-radius: 3px;
+	margin-left: 2rem;
+}
+.center-nav input[type='submit'] {
+	padding: 0.3rem;
+	border-radius: 3px;
+	margin-left: -2.7rem;
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+
+.right-nav {
+	display: flex;
+	gap: 15px;
+}
