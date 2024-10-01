@@ -44,9 +44,6 @@ const TotalAmount = () => {
 					</td>
 				</tr>
 			</tbody>
-			<div className='asd'>
-				<a>FINALIZAR COMPRA</a>
-			</div>
 		</table>
 	)
 }

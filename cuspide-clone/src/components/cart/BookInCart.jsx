@@ -6,6 +6,7 @@ const BookInCart = () => {
 	const bookInCart = useBookStore((state) => state.bookInCart)
 	const decreaseQuantity = useBookStore((state) => state.decreaseQuantity)
 	const increaseQuantity = useBookStore((state) => state.increaseQuantity)
+	const removeFromCart = useBookStore((state) => state.removeFromCart)
 
 	const onHandlerDecreaseQuantity = (e) => {
 		const bookID = e.target.closest('.row').dataset.id
@@ -16,6 +17,10 @@ const BookInCart = () => {
 		increaseQuantity(bookID)
 	}
 
+	const removeBookFromCart = (e) => {
+		const bookID = e.target.closest('.row').dataset.id
+		removeFromCart(bookID)
+	}
 	return (
 		<table className='book-in-cart-table'>
 			<thead>
@@ -34,28 +39,33 @@ const BookInCart = () => {
 					let totalPrice = convertCurrency(price * quantity)
 					return (
 						<tr key={id} className='row' data-id={id}>
-							<button className='remove-button'>
-								<svg
-									xmlns='http://www.w3.org/2000/svg'
-									width={30}
-									height={30}
-									viewBox='0 0 24 24'
-									fill='none'
-									stroke='currentColor'
-									strokeWidth={1}
-									strokeLinecap='round'
-									strokeLinejoin='round'
-									className='icon icon-tabler icons-tabler-outline icon-tabler-circle-x'
+							<td>
+								<button
+									className='remove-button'
+									onClick={removeBookFromCart}
 								>
-									<path
-										stroke='none'
-										d='M0 0h24v24H0z'
+									<svg
+										xmlns='http://www.w3.org/2000/svg'
+										width={30}
+										height={30}
+										viewBox='0 0 24 24'
 										fill='none'
-									/>
-									<path d='M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0' />
-									<path d='M10 10l4 4m0 -4l-4 4' />
-								</svg>
-							</button>
+										stroke='currentColor'
+										strokeWidth={1}
+										strokeLinecap='round'
+										strokeLinejoin='round'
+										className='icon icon-tabler icons-tabler-outline icon-tabler-circle-x'
+									>
+										<path
+											stroke='none'
+											d='M0 0h24v24H0z'
+											fill='none'
+										/>
+										<path d='M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0' />
+										<path d='M10 10l4 4m0 -4l-4 4' />
+									</svg>
+								</button>
+							</td>
 							<td>
 								<div style={{ width: '80px' }}>
 									<img src={poster} alt={title} />
@@ -67,12 +77,13 @@ const BookInCart = () => {
 								<div className='input-book-in-cart'>
 									<input
 										type='button'
-										value='-'
+										defaultValue='-'
 										onClick={onHandlerDecreaseQuantity}
 									/>
 									<input
 										type='number'
 										value={quantity}
+										readOnly
 										min='0'
 										max='99999'
 										step='1'
@@ -82,7 +93,7 @@ const BookInCart = () => {
 									/>
 									<input
 										type='button'
-										value='+'
+										defaultValue='+'
 										onClick={onHandlerIncreaseQuantity}
 									/>
 								</div>
