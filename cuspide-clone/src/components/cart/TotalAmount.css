@@ -1,0 +1,24 @@
+.total-amount-table {
+	width: 60%;
+}
+
+.total-amount-span {
+	font-size: 0.8rem;
+	display: block;
+	text-align: right;
+}
+.total-amount-table a {
+	display: block;
+	width: 100%;
+	background-color: var(--buttonColor);
+	color: white;
+	border: none;
+	border-radius: 5px;
+	padding: 10px;
+	cursor: pointer;
+	text-align: center;
+	margin: 0 auto;
+}
+.total-amount-table a:hover {
+	background-color: var(--buttonHoverColor);
+}

@@ -6,7 +6,7 @@ const BookInCart = () => {
 	const bookInCart = useBookStore((state) => state.bookInCart)
 
 	return (
-		<table>
+		<table className='book-in-cart-table'>
 			<thead>
 				<tr>
 					<th></th>

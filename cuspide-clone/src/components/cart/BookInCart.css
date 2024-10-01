@@ -1,8 +1,9 @@
-table {
+.book-in-cart-table {
 	border-collapse: collapse;
 	width: 100%;
 	color: var(--colorText);
 	text-align: left;
+	border-right: 1px solid rgb(202, 202, 202);
 }
 
 tr th {
