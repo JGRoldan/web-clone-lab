@@ -4,6 +4,17 @@ import './BookInCart.css'
 
 const BookInCart = () => {
 	const bookInCart = useBookStore((state) => state.bookInCart)
+	const decreaseQuantity = useBookStore((state) => state.decreaseQuantity)
+	const increaseQuantity = useBookStore((state) => state.increaseQuantity)
+
+	const onHandlerDecreaseQuantity = (e) => {
+		const bookID = e.target.closest('.row').dataset.id
+		decreaseQuantity(bookID)
+	}
+	const onHandlerIncreaseQuantity = (e) => {
+		const bookID = e.target.closest('.row').dataset.id
+		increaseQuantity(bookID)
+	}
 
 	return (
 		<table className='book-in-cart-table'>
@@ -22,7 +33,7 @@ const BookInCart = () => {
 					let convertPrice = convertCurrency(price)
 					let totalPrice = convertCurrency(price * quantity)
 					return (
-						<tr key={id} className='row'>
+						<tr key={id} className='row' data-id={id}>
 							<button className='remove-button'>
 								<svg
 									xmlns='http://www.w3.org/2000/svg'
@@ -54,7 +65,11 @@ const BookInCart = () => {
 							<td>{convertPrice}</td>
 							<td>
 								<div className='input-book-in-cart'>
-									<input type='button' value='-' />
+									<input
+										type='button'
+										value='-'
+										onClick={onHandlerDecreaseQuantity}
+									/>
 									<input
 										type='number'
 										value={quantity}
@@ -62,10 +77,14 @@ const BookInCart = () => {
 										max='99999'
 										step='1'
 										placeholder=''
-										inputmode='numeric'
-										autocomplete='off'
+										inputMode='numeric'
+										autoComplete='off'
 									/>
-									<input type='button' value='+' />
+									<input
+										type='button'
+										value='+'
+										onClick={onHandlerIncreaseQuantity}
+									/>
 								</div>
 							</td>
 							<td>{totalPrice}</td>

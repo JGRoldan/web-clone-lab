@@ -4,7 +4,7 @@ import { bookData as data } from '@/data/bookData.js'
 
 export const useBookStore = create(
 	persist(
-		(set) => ({
+		(set, get) => ({
 			bookData: [],
 			bookInCart: [],
 			bookInWishList: [],
@@ -67,6 +67,50 @@ export const useBookStore = create(
 						(book) => book.id !== bookId
 					),
 				})),
+
+			decreaseQuantity: (bookId) => {
+				set((state) => {
+					const book = state.bookInCart.find(
+						(book) => book.id === bookId
+					)
+
+					if (book.quantity > 1) {
+						return {
+							bookInCart: state.bookInCart.map((cartItem) =>
+								cartItem.id === bookId
+									? {
+											...cartItem,
+											quantity: cartItem.quantity - 1,
+									  }
+									: cartItem
+							),
+						}
+					} else {
+						return {
+							bookInCart: state.bookInCart.filter(
+								(book) => book.id !== bookId
+							),
+						}
+					}
+				})
+			},
+			increaseQuantity: (bookId) => {
+				set((state) => {
+					const book = state.bookInCart.find(
+						(book) => book.id === bookId
+					)
+					return {
+						bookInCart: state.bookInCart.map((cartItem) =>
+							cartItem.id === bookId
+								? {
+										...cartItem,
+										quantity: cartItem.quantity + 1,
+								  }
+								: cartItem
+						),
+					}
+				})
+			},
 		}),
 		{
 			name: 'book-storage', // name of the item in the storage (must be unique)
