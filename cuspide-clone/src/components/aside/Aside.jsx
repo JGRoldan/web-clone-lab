@@ -33,12 +33,13 @@ const Aside = () => {
 				<div className='aside-item'>
 					<h3>FILTRAR POR PRECIOS</h3>
 					<div className='aside-price-filter'>
-					<form action="" onSubmit={onHandlerSubmit}>
-						<input type="text" name="minPrice" id="minPrice" className='price-filter-input' placeholder="Min"/>
-						<span>-</span>
-						<input type="text" name="maxPrice" id="maxPrice" className='price-filter-input' placeholder="Max"/>
-						<button className='price-filter-button' type='submit'>IR</button>
-					</form>
+						<form action="" onSubmit={onHandlerSubmit}>
+							<input type="text" name="minPrice" id="minPrice" className='price-filter-input' placeholder="Min"/>
+							<span>-</span>
+							<input type="text" name="maxPrice" id="maxPrice" className='price-filter-input' placeholder="Máx"/>
+							<button className='price-filter-button' type='submit'>IR</button>
+						</form>
+						<span className="range-price">*Min. $995.00 - Max. $588086.00</span>
 					</div>
 				</div>
 		</aside>

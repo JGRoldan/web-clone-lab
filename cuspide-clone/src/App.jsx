@@ -19,10 +19,10 @@ function App() {
 					<Route
 						path='/'
 						element={
-							<React.Fragment>
+							<section className='main-layout'>
 								<Aside />
 								<Book />
-							</React.Fragment>
+							</section>
 						}
 					/>
 					<Route path='/lista-deseos' element={<WishListPage />} />

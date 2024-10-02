@@ -1,4 +1,6 @@
 header {
+	width: 75%;
+	margin: auto;
 	margin-top: 2rem;
 	display: flex;
 	align-items: center;
@@ -58,4 +60,37 @@ header {
 .active {
 	opacity: 1;
 	transform: translateY(0); /* Se desliza hacia arriba */
+}
+
+.header-container nav{
+	width: 100%;
+	background-color: var(--colorText);
+	color:#c8c8c8;
+}
+
+.header-container nav ul{
+	width: 75%;
+	margin: auto;
+	display: flex;
+	align-items: center;
+	justify-content: start;
+	font-size: 13px;
+	padding: 9px 0;
+}
+.header-container nav ul li{
+	border-right: 1px solid #676767;
+	padding: 0px 8px;
+}
+.header-container nav ul li:last-child{
+	border-right: none;
+}
+.header-container nav ul li:hover{
+	color: var(--whiteText);
+	cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    nav {
+        display: none;
+    }
 }

@@ -23,28 +23,28 @@ const Book = () => {
 		: bookData.filter(({ editorial }) => editorial.includes(selectedEditorial))
 
 	
-		const filteredBookByPrice = filteredBooks.filter(({ price }) => {
-			const priceNumber = parseFloat(price);
-			const minPriceNumber = parseFloat(minPrice);
-			const maxPriceNumber = parseFloat(maxPrice);
+	const filteredBookByPrice = filteredBooks.filter(({ price }) => {
+		const priceNumber = parseFloat(price);
+		const minPriceNumber = parseFloat(minPrice);
+		const maxPriceNumber = parseFloat(maxPrice);
 		
-			// Comprobar si los valores de minPrice o maxPrice son válidos
-			const isMinPriceValid = !isNaN(minPriceNumber);
-			const isMaxPriceValid = !isNaN(maxPriceNumber);
+		// Comprobar si los valores de minPrice o maxPrice son válidos
+		const isMinPriceValid = !isNaN(minPriceNumber);
+		const isMaxPriceValid = !isNaN(maxPriceNumber);
 		
-			if (isMinPriceValid && isMaxPriceValid) {
-				return priceNumber >= minPriceNumber && priceNumber <= maxPriceNumber;
-			} else if (isMinPriceValid) {
-				// Si solo minPrice es válido, filtrar los precios mayores o iguales a minPrice
-				return priceNumber >= minPriceNumber;
-			} else if (isMaxPriceValid) {
-				// Si solo maxPrice es válido, filtrar los precios menores o iguales a maxPrice
-				return priceNumber <= maxPriceNumber;
-			} else {
-				// Si ninguno es válido, mostrar todos los libros
-				return true;
-			}
-		})
+		if (isMinPriceValid && isMaxPriceValid) {
+			return priceNumber >= minPriceNumber && priceNumber <= maxPriceNumber;
+		} else if (isMinPriceValid) {
+			// Si solo minPrice es válido, filtrar los precios mayores o iguales a minPrice
+			return priceNumber >= minPriceNumber;
+		} else if (isMaxPriceValid) {
+			// Si solo maxPrice es válido, filtrar los precios menores o iguales a maxPrice
+			return priceNumber <= maxPriceNumber;
+		} else {
+			// Si ninguno es válido, mostrar todos los libros
+			return true;
+		}
+	})
 
 	useEffect(() => {
 		if (bookData.length === 0) {

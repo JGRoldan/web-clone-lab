@@ -1,15 +1,16 @@
 .container-book {
-	width: 100%;
-	columns: 6 auto;
+	width: 75%;
+	margin: auto;
 	display: flex;
+	justify-content: center;
 	flex-wrap: wrap;
 }
 
 .book {
-	width: 200px;
-	height: auto;
-	position: relative;
+	width: calc(100% / 5); /* Hace que cada libro ocupe 1/6 del ancho total */
+    box-sizing: border-box; /* Incluye el padding en el ancho total */
 	text-align: center;
+	position: relative;
 	padding: 10px;
 }
 .image-book img {
@@ -54,4 +55,17 @@
 .wish-button svg:hover {
 	stroke: red;
 	fill: red;
+}
+
+
+@media (max-width: 1200px) {
+    .book {
+        width: calc(100% / 3); /* 3 columnas en pantallas medianas */
+    }
+}
+
+@media (max-width: 768px) {
+    .book {
+        width: calc(100% / 2); /* 2 columnas en pantallas pequeñas */
+    }
 }

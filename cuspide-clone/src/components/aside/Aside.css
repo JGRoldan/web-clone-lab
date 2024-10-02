@@ -1,3 +1,44 @@
-h1 {
-	background-color: #424242;
+.aside-container{
+	width: 75%;
+	width: calc(100% / 4);
+}
+.aside-container h3{
+	font-size: 14px;
+	color:var(--colorText)
+}
+
+.aside-container > *{
+	padding: 12px 0;
+}
+
+#editoriales{
+	width: 90%;
+	padding: 8px 10px;
+	border: 1px solid rgb(202, 202, 202);
+	border-radius: 3px;
+}
+
+.aside-price-filter{
+	width:100%;
+}
+#minPrice, #maxPrice{
+	width: 25%;
+	border: 1px solid rgb(202, 202, 202);
+	border-radius: 6px;
+	padding: 8px;
+	text-align: center;
+	border-radius: 5px;
+}
+.aside-price-filter button{
+	background-color: var(--orangeText);
+	color: var(--whiteText);
+	padding: 8px 10px;
+	border-radius: 6px;
+	font-weight: 800;
+	border: none;
+	margin-left: 6px;
+}
+
+.range-price{
+	font-size: 10px;
 }
