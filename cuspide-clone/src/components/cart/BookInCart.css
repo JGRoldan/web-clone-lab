@@ -46,13 +46,13 @@ tbody tr td img {
 }
 
 /* Para navegadores Webkit (Chrome, Safari, Edge) */
-input[type='number']::-webkit-outer-spin-button,
-input[type='number']::-webkit-inner-spin-button {
+.book-in-cart-table input[type='number']::-webkit-outer-spin-button,
+.book-in-cart-table input[type='number']::-webkit-inner-spin-button {
 	-webkit-appearance: none;
 	margin: 0;
 }
 
 /* Para Firefox */
-input[type='number'] {
+.book-in-cart-table input[type='number'] {
 	-moz-appearance: textfield;
 }

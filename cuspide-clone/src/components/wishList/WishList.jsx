@@ -1,6 +1,6 @@
 import { useBookStore } from '@/store/useBookStore.js'
-import './WishList.css'
 import { convertCurrency } from '@/util/convertCurrency.js'
+import './WishList.css'
 
 const WishList = () => {
 	const bookInWishList = useBookStore((state) => state.bookInWishList)
@@ -25,7 +25,7 @@ const WishList = () => {
 
 	return bookInWishList.length === 0 ? (
 		<>
-			<table>
+			<table className='whish-list-table'>
 				<thead>
 					<tr>
 						<th></th>
@@ -42,10 +42,10 @@ const WishList = () => {
 					</tr>
 				</tbody>
 			</table>
-			<p>No se han añadido productos a la lista de deseos</p>
+			<p className='empty-wish-list'>No se han añadido productos a la lista de deseos</p>
 		</>
 	) : (
-		<table>
+		<table className='whish-list-table'>
 			<thead>
 				<tr>
 					<th></th>
@@ -92,7 +92,7 @@ const WishList = () => {
 								<img
 									src={poster}
 									alt={`Imagen de la portada del libro ${title}.`}
-									width={100}
+									style={{ width: '100px' }}
 								/>
 							</td>
 							<td>

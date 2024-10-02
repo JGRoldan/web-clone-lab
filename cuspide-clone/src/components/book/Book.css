@@ -65,6 +65,9 @@
 }
 
 @media (max-width: 768px) {
+	.container-book {
+		width: 100%;
+	}
     .book {
         width: calc(100% / 2); /* 2 columnas en pantallas pequeñas */
     }

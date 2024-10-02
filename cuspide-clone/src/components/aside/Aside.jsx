@@ -39,7 +39,7 @@ const Aside = () => {
 							<input type="text" name="maxPrice" id="maxPrice" className='price-filter-input' placeholder="Máx"/>
 							<button className='price-filter-button' type='submit'>IR</button>
 						</form>
-						<span className="range-price">*Min. $995.00 - Max. $588086.00</span>
+						<span className="range-price">*Min. $0.00 - Max. $100000.00</span>
 					</div>
 				</div>
 		</aside>
