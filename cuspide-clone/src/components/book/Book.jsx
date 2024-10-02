@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { useBookStore } from '@/store/useBookStore'
+import { useStoreFilteredBook } from '../../store/useStoreFilteredBook'
 import { convertCurrency } from '@/util/convertCurrency.js'
 import './Book.css'
 
@@ -7,12 +8,43 @@ const Book = () => {
 	const bookData = useBookStore((state) => state.bookData)
 	const fetchData = useBookStore((state) => state.setBookData)
 	const addToWhishList = useBookStore((state) => state.addToWhishList)
+	const selectedEditorial = useStoreFilteredBook(state => state.selectedEditorial);
+	const minPrice = useStoreFilteredBook(state => state.minPrice);
+	const maxPrice = useStoreFilteredBook(state => state.maxPrice);
 
 	const onHandleClickWhishList = (e) => {
 		const bookID = e.target.closest('.book').dataset.id
 		const bookFiltered = bookData.find((book) => book.id === bookID)
 		addToWhishList(bookFiltered)
 	}
+	
+	const filteredBooks = selectedEditorial === ''
+		? bookData
+		: bookData.filter(({ editorial }) => editorial.includes(selectedEditorial))
+
+	
+		const filteredBookByPrice = filteredBooks.filter(({ price }) => {
+			const priceNumber = parseFloat(price);
+			const minPriceNumber = parseFloat(minPrice);
+			const maxPriceNumber = parseFloat(maxPrice);
+		
+			// Comprobar si los valores de minPrice o maxPrice son válidos
+			const isMinPriceValid = !isNaN(minPriceNumber);
+			const isMaxPriceValid = !isNaN(maxPriceNumber);
+		
+			if (isMinPriceValid && isMaxPriceValid) {
+				return priceNumber >= minPriceNumber && priceNumber <= maxPriceNumber;
+			} else if (isMinPriceValid) {
+				// Si solo minPrice es válido, filtrar los precios mayores o iguales a minPrice
+				return priceNumber >= minPriceNumber;
+			} else if (isMaxPriceValid) {
+				// Si solo maxPrice es válido, filtrar los precios menores o iguales a maxPrice
+				return priceNumber <= maxPriceNumber;
+			} else {
+				// Si ninguno es válido, mostrar todos los libros
+				return true;
+			}
+		})
 
 	useEffect(() => {
 		if (bookData.length === 0) {
@@ -22,7 +54,7 @@ const Book = () => {
 
 	return (
 		<div className='container-book'>
-			{bookData.map(({ id, poster, title, author, price }) => {
+			{filteredBookByPrice.map(({ id, poster, title, author, price }) => {
 				let convertPrice = convertCurrency(price)
 
 				return (

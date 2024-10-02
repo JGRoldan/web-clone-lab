@@ -5,6 +5,7 @@ export const bookData = [
 		title: 'Nexus',
 		author: 'Yuval Noah Harari',
 		price: 36999,
+		editorial: 'Debate',
 	},
 	{
 		id: '2',
@@ -12,13 +13,14 @@ export const bookData = [
 		title: 'La Felicidad (Nuevo Formato)',
 		author: 'Gabriel Rolón',
 		price: 32900,
+		editorial: 'Planeta',
 	},
 	{
 		id: '3',
 		poster: '/libros/este-dolor-no-es-mio.jpg',
 		title: 'Este Dolor No Es Mío',
 		author: 'Mark Wolynn',
-		editorial: 'Águila',
+		editorial: 'Gaia Ediciones',
 		price: 29900,
 	},
 	{
@@ -27,6 +29,7 @@ export const bookData = [
 		title: 'Los Soles de Santiago',
 		author: 'Viviana Rivero',
 		price: 34900,
+		editorial:'Planeta'
 	},
 	{
 		id: '5',
@@ -34,6 +37,7 @@ export const bookData = [
 		title: 'El Libro de Bill',
 		author: 'Alex Hirsch',
 		price: 38400,
+		editorial:'Planeta'
 	},
 	{
 		id: '6',
@@ -41,6 +45,7 @@ export const bookData = [
 		title: 'La Cacería de Hierro',
 		author: 'Hugo Alconada Mon',
 		price: 27600,
+		editorial:'Planeta'
 	},
 	{
 		id: '7',
@@ -48,6 +53,7 @@ export const bookData = [
 		title: 'El Niño que Perdió la Guerra',
 		author: 'Julia Navarro',
 		price: 29999,
+		editorial:'Plaza & Janes Editores'
 	},
 	{
 		id: '8',
@@ -55,6 +61,7 @@ export const bookData = [
 		title: 'Romper el Círculo (It Ends With Us)',
 		author: 'Colleen Hoover',
 		price: 32900,
+		editorial:'Planeta'
 	},
 	{
 		id: '9',
@@ -62,6 +69,7 @@ export const bookData = [
 		title: 'Diario de una Mudanza',
 		author: 'Inés Garland',
 		price: 19999,
+		editorial:'Alfaguara'
 	},
 	{
 		id: '10',
@@ -69,6 +77,7 @@ export const bookData = [
 		title: 'Hábitos Atómicos',
 		author: 'James Clear',
 		price: 21000,
+		editorial:'Booket'
 	},
 	{
 		id: '11',
@@ -76,6 +85,7 @@ export const bookData = [
 		title: 'Destroza Este Diario (A Todo Color)',
 		author: 'Keri Smith',
 		price: 27200,
+		editorial:'Paidos'
 	},
 	{
 		id: '12',
@@ -83,5 +93,6 @@ export const bookData = [
 		title: 'En Agosto Nos Vemos',
 		author: 'Gabriel García Márquez',
 		price: 19999,
+		editorial:'Sudamericana'
 	},
 ]

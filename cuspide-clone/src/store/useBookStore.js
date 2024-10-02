@@ -4,7 +4,7 @@ import { bookData as data } from '@/data/bookData.js'
 
 export const useBookStore = create(
 	persist(
-		(set, get) => ({
+		(set) => ({
 			bookData: [],
 			bookInCart: [],
 			bookInWishList: [],
