@@ -39,6 +39,10 @@
 	margin-left: 6px;
 }
 
+.price-filter-button{
+	cursor: pointer;
+}
+
 .range-price{
 	font-size: 10px;
 }

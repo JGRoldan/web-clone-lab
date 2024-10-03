@@ -1,9 +1,9 @@
 # Clones de paginas web
 
-| Clone    | Ver Código                                                               | Sitio oficial                                         |
-| -------- | ------------------------------------------------------------------------ | ----------------------------------------------------- |
-| Cúspide  | [Ver](https://github.com/JGRoldan/web-clone-lab/tree/main/cuspide-clone) | [Visitar](https://cuspide.com/tienda/)                |
-| Dan Tase | [Ver](https://github.com/JGRoldan/web-clone-lab/tree/main/dantase-clone) | [Visitar](https://www.dantase.com/?ref=land-book.com) |
+| Clone    | Ver Código                                                               | Demo |Sitio oficial                                         |
+| -------- | ------------------------------------------------------------------------ | --- |----------------------------------------------------- |
+| Cúspide  | [Ver](https://github.com/JGRoldan/web-clone-lab/tree/main/cuspide-clone) | [Demo](https://cuspide-clone.vercel.app/)|[Visitar](https://cuspide.com/tienda/)                |
+| Dan Tase | [Ver](https://github.com/JGRoldan/web-clone-lab/tree/main/dantase-clone) | - |[Visitar](https://www.dantase.com/?ref=land-book.com) |
 
 #### Disclaimer
 

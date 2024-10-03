@@ -1,8 +1,21 @@
-# React + Vite
+# Cuspide - Clone
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este es un clon de la página de venta de libros Cúspide. El proyecto se enfoca en ofrecer una experiencia de compra de libros online con las siguientes funcionalidades clave:
 
-Currently, two official plugins are available:
+### Funcionalidades
+- 📚 Añadir libros a la lista de deseos.
+- 🛒 Agregar libros al carrito de compras.
+- 🔍 Filtrar libros por autor, editorial y precio.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Tecnologías Utilizadas
+- React: Biblioteca para la construcción de interfaces de usuario interactivas.
+- Tailwind CSS: Framework de CSS para crear diseños modernos y responsivos con facilidad.
+- Zustand: Librería para la gestión del estado en React, simple y minimalista.
+
+## Enlaces del Proyecto
+
+🔗 [Demo](https://cuspide-clone.vercel.app/)
+🔗 [Repositorio](https://github.com/JGRoldan/web-clone-lab/tree/main/cuspide-clone)
+
+
+
