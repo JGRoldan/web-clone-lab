@@ -14,8 +14,9 @@ Este es un clon de la página de venta de libros Cúspide. El proyecto se enfoca
 
 ## Enlaces del Proyecto
 
-🔗 [Demo](https://cuspide-clone.vercel.app/)
+🔗 [Demo](https://cuspide-clone.vercel.app/)  
 🔗 [Repositorio](https://github.com/JGRoldan/web-clone-lab/tree/main/cuspide-clone)
 
+https://github.com/user-attachments/assets/4db7c9bf-a22e-4935-bf2e-1430c0ab0160
 
 
