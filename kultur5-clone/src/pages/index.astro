@@ -2,6 +2,10 @@
 import Layout from '../layouts/Layout.astro'
 import Header from '../components/Header.astro'
 import MainSection from '../components/MainSection.astro'
+import ShopifySection from '../components/ShopifySection.astro'
+import JewelrySection from '../components/JewelrySection.astro'
+import BgImageSection from '../components/BgImageSection.astro'
+import LogoSection from '../components/LogoSection.astro'
 ---
 
 <Layout title='Kultur5 - Clone'>
@@ -9,11 +13,28 @@ import MainSection from '../components/MainSection.astro'
 		<Header />
 		<MainSection />
 		<div class='gap'></div>
+		<ShopifySection />
+		<div class='gap'></div>
+		<BgImageSection />
+		<div class='gap'></div>
+		<JewelrySection />
+		<div class='gap'></div>
+		<LogoSection />
+		<footer style={{ textAlign: 'center' }} data-astro-cid-j7pv25f6=''>
+			Kultur5 Clone - Made by <a
+				href='https://github.com/JGRoldan/'
+				target='_blank'
+				rel='noopener noreferrer'
+				style={{ color: '#0000FF', paddingBottom: '1rem' }}
+			>
+				JGRoldan
+			</a> with ❤
+		</footer>
 	</main>
 </Layout>
 
 <style>
 	.gap {
-		height: 6rem;
+		height: 4rem;
 	}
 </style>

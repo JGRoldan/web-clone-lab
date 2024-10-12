@@ -1,0 +1,62 @@
+---
+import { Image } from 'astro:assets'
+---
+
+<section class='jewelry-main'>
+	<div class='main-jewelry'>
+		<div class='main-jewelry-left'>
+			<p>All jewelry can be made in custom size.</p>
+			<p>
+				Enter your desired size, diameter or circumference of ring,
+				bracelet or necklace in check out without any extra fee.
+			</p>
+			<a href='#'>Shop jewelry</a>
+		</div>
+		<div class='main-jewelry-right'>
+			<a href='#'>
+				<Image
+					src='/images/jewelry.webp'
+					alt='Jewelry section'
+					style='height: 100%; width: 80%;'
+					width={1}
+					height={1}
+				/>
+			</a>
+		</div>
+	</div>
+</section>
+
+<style>
+	.main-jewelry {
+		display: grid;
+		grid-template-columns: repeat(12, minmax(0, 1fr));
+		margin-top: 1rem;
+		gap: 1rem;
+	}
+	.main-jewelry-left {
+		grid-column: span 6 / span 6;
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		gap: 1rem;
+		margin-left: 6rem;
+		order: 2;
+	}
+	.main-jewelry-left p {
+		font-size: 2.4rem;
+		font-weight: 700;
+	}
+	.main-jewelry-left a {
+		font-size: 1.2rem;
+		font-weight: 700;
+		width: fit-content;
+	}
+	.main-jewelry-right {
+		grid-column: span 6 / span 6;
+		order: 1;
+	}
+	.main-jewelry-right a {
+		margin-left: 8rem;
+	}
+</style>

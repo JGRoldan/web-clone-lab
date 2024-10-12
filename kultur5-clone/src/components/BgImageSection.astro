@@ -1,0 +1,31 @@
+---
+import { Image } from 'astro:assets'
+---
+
+<section class='bg-section-main'>
+	<div class='main-bg-section'>
+		<div class='main-bg-section-right'>
+			<a href='#'>
+				<Image
+					src='/images/bg-section.webp'
+					alt='Imagen de fondo section'
+					style='height: 100%; width: 100%; object-fit: cover;'
+					width={1}
+					height={1}
+				/>
+			</a>
+		</div>
+	</div>
+</section>
+
+<style>
+	.main-bg-section {
+		display: grid;
+		grid-template-columns: repeat(12, minmax(0, 1fr));
+		margin-top: 1rem;
+		gap: 1rem;
+	}
+	.main-bg-section-right {
+		grid-column: span 12 / span 12;
+	}
+</style>

@@ -1,0 +1,55 @@
+---
+import { Image } from 'astro:assets'
+---
+
+<section class='shopify-main'>
+	<div class='main-shopify'>
+		<div class='main-shopify-left'>
+			<p>
+				All materials are sourced with sustainability in mind, and
+				locally produced.
+			</p>
+			<a href='#'>Shop jewelry</a>
+		</div>
+		<div class='main-shopify-right'>
+			<a href='#'>
+				<Image
+					src='/images/shopify.webp'
+					alt='Shopify section'
+					style='height: 95%; width: 85%;'
+					width={1}
+					height={1}
+				/>
+			</a>
+		</div>
+	</div>
+</section>
+
+<style>
+	.main-shopify {
+		display: grid;
+		grid-template-columns: repeat(12, minmax(0, 1fr));
+		margin-top: 1rem;
+		gap: 1rem;
+	}
+	.main-shopify-left {
+		grid-column: span 6 / span 6;
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		gap: 1rem;
+	}
+	.main-shopify-left p {
+		font-size: 2.5rem;
+		font-weight: 700;
+	}
+	.main-shopify-left a {
+		font-size: 1.2rem;
+		font-weight: 700;
+		width: fit-content;
+	}
+	.main-shopify-right {
+		grid-column: span 6 / span 6;
+	}
+</style>

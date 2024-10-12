@@ -1,0 +1,28 @@
+---
+import { Image } from 'astro:assets'
+---
+
+<section class='bg-section-main'>
+	<div class='main-bg-section'>
+		<div class='main-bg-section-right'>
+			<Image
+				src='/images/ARTWORK.svg'
+				alt='Imagen de fondo section'
+				width={900}
+				height={900}
+			/>
+		</div>
+	</div>
+</section>
+
+<style>
+	.main-bg-section {
+		display: grid;
+		grid-template-columns: repeat(12, minmax(0, 1fr));
+	}
+	.main-bg-section-right {
+		grid-column: span 12 / span 12;
+		align-self: center;
+		justify-self: center;
+	}
+</style>
