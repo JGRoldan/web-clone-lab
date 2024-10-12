@@ -1,0 +1,42 @@
+---
+
+---
+
+<header>
+	<div class='left-nav'>
+		<div>
+			<a href='#' rel='noopener noreferer'>Kultur5</a>
+		</div>
+		<div>
+			<a href='#' rel='noopener noreferer'>Kultur5 / Shop</a>
+		</div>
+		<div>
+			<a href='#' rel='noopener noreferer'>Kultur5 / Projects</a>
+		</div>
+	</div>
+	<div class='rigth-nav'>
+		<a href='#' rel='noopener noreferer'>Search</a>
+		<a href='#' rel='noopener noreferer'>Cart / 0</a>
+	</div>
+</header>
+
+<style>
+	header {
+		display: grid;
+		grid-template-columns: repeat(12, minmax(0, 1fr));
+		margin-top: 0.5rem;
+		font-weight: 900;
+		font-size: 1.1rem;
+		position: sticky;
+		top: 1%;
+		z-index: 1000;
+	}
+	.left-nav {
+		grid-column: span 4 / span 4;
+	}
+	.rigth-nav {
+		grid-column: span 8 / span 8;
+		display: flex;
+		justify-content: space-between;
+	}
+</style>

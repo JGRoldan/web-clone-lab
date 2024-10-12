@@ -1,0 +1,65 @@
+---
+import { Image } from 'astro:assets'
+---
+
+<section class='section-main'>
+	<div class='main-section'>
+		<div class='main-section-left'>
+			<a href='#'>
+				<video autoplay loop>
+					<source src='/video/main-section.mp4' type='' />
+				</video>
+				<h3>Garden Collection</h3>
+			</a>
+		</div>
+		<div class='main-section-right'>
+			<a href='#'>
+				<Image
+					src='/images/main-section.webp'
+					alt='Main Section'
+					style='height: 100%; width: 100%; object-fit: cover;'
+					width={1}
+					height={1}
+				/>
+				<h3>Rope Earrings</h3>
+			</a>
+		</div>
+	</div>
+</section>
+
+<style>
+	.main-section {
+		display: grid;
+		grid-template-columns: repeat(12, minmax(0, 1fr));
+		margin-top: 1rem;
+		gap: 1rem;
+	}
+	.main-section-left {
+		grid-column: span 6 / span 6;
+		position: relative;
+	}
+	.main-section-left h3 {
+		color: white;
+		position: absolute;
+		top: 50%;
+		left: 2%;
+	}
+
+	.main-section-right {
+		grid-column: span 6 / span 6;
+		position: relative;
+	}
+
+	.main-section-right h3 {
+		color: white;
+		position: absolute;
+		top: 50%;
+		right: 2%;
+	}
+
+	video {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+</style>
