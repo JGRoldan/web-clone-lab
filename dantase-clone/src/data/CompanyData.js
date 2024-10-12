@@ -1,6 +1,6 @@
 export const companyData = [
 	{
-		logo: 'Upward',
+		logo: '/images/upward/upward-logo.png',
 		titleSpan:
 			'Upward is an NYC based start-up helping companies reduce their carbon footprint.',
 		restTitle:
