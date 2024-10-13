@@ -1,0 +1,61 @@
+---
+import { projectNav } from '@/data/projectNavData'
+---
+
+<nav>
+	<ul>
+		{
+			projectNav.map((item) => {
+				return (
+					<li>
+						<span>{item.title}</span>
+						<div>
+							<img
+								src={`/images/project/${item.imgSrc}`}
+								alt={`Imagen de link ${item.title}`}
+							/>
+						</div>
+					</li>
+				)
+			})
+		}
+	</ul>
+</nav>
+
+<style>
+	nav {
+		width: 100%;
+		height: 80vh;
+	}
+	ul {
+		width: 100%;
+	}
+	ul li {
+		list-style: none;
+		display: flex;
+		position: relative;
+	}
+	ul li span {
+		font-size: 2.6rem;
+		font-weight: 600;
+		min-width: 500px;
+	}
+	ul li div {
+		position: fixed;
+		top: 5%;
+		left: 40%;
+	}
+	ul li div img {
+		visibility: hidden;
+		width: 50%;
+		opacity: 0;
+		transition:
+			opacity 0.3s ease,
+			visibility 0s linear 0.3s;
+	}
+	ul li:hover div img {
+		visibility: visible;
+		opacity: 1;
+		transition-delay: 0s;
+	}
+</style>
