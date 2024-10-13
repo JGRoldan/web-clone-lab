@@ -1,0 +1,14 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import HeaderShop from '@/components/HeaderShop.astro'
+import ShopImages from '@/components/ShopImages.astro'
+---
+
+<Layout title='Kultur5 - Clone'>
+	<main>
+		<HeaderShop />
+		<ShopImages client:load />
+	</main>
+</Layout>
+
+<style></style>

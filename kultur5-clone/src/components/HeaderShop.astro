@@ -5,15 +5,20 @@
 <header>
 	<div class='left-nav'>
 		<div>
-			<a class='left-a' href='/index.html' rel='noopener noreferer'>
-				Kultur5
-			</a>
+			<a href='/index.html' rel='noopener noreferer'>Kultur5</a>
 		</div>
-		<div>
-			<a class='left-a' href='/shop.html' rel='noopener noreferer'>
-				Kultur5 / Shop
-			</a>
-		</div>
+		<nav>
+			<span>Kultur5 / &nbsp;</span>
+			<ul>
+				<li>All</li>
+				<li>New</li>
+				<li>Rings</li>
+				<li>Earrings</li>
+				<li>Bracelets</li>
+				<li>Necklaces</li>
+				<li>Pendants</li>
+			</ul>
+		</nav>
 		<div>
 			<a class='left-a' href='#' rel='noopener noreferer'>
 				Kultur5 / Projects
@@ -47,5 +52,30 @@
 		grid-column: span 8 / span 8;
 		display: flex;
 		justify-content: space-between;
+	}
+	nav {
+		display: flex;
+	}
+	nav ul {
+		list-style: none;
+	}
+
+	nav ul li:not(:first-child) {
+		color: var(--grey-text);
+	}
+	.left-nav div:last-child a {
+		color: var(--grey-text);
+	}
+
+	nav ul li:hover {
+		color: var(--black-text);
+		transition: ease-in 0.2s;
+		cursor: pointer;
+	}
+	@media (max-width: 992px) {
+		.rigth-nav {
+			align-items: end;
+			flex-direction: column;
+		}
 	}
 </style>

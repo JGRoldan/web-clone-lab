@@ -19,11 +19,31 @@ const { title } = Astro.props
 	</head>
 	<body>
 		<slot />
+		<footer
+			style={{
+				textAlign: 'center',
+				paddingTop: '1rem',
+				paddingBottom: '1rem',
+			}}
+		>
+			Kultur5 Clone - Made by <a
+				href='https://github.com/JGRoldan/'
+				target='_blank'
+				rel='noopener noreferrer'
+				style={{
+					color: '#E45F11',
+				}}
+			>
+				JGRoldan
+			</a> with ❤
+		</footer>
 	</body>
 </html>
 <style is:global>
 	:root {
 		--black-text: #000;
+		--white-text: #fff;
+		--grey-text: #4e4e4e4f;
 	}
 	* {
 		margin: 0;
@@ -41,5 +61,15 @@ const { title } = Astro.props
 	a {
 		text-decoration: none;
 		color: var(--black-text);
+	}
+	::-moz-selection {
+		/* Code for Firefox */
+		color: var(--white-text);
+		background: #e45f11;
+	}
+
+	::selection {
+		color: var(--white-text);
+		background: #e45f11;
 	}
 </style>
