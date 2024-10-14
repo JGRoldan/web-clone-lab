@@ -47,6 +47,15 @@ const KanbanBoard = () => {
             distance: 2
         }
     }))
+
+    const updateColumn = (id, title) => {
+        const newColumn = columns.map(column => {
+            if (column.id !== id) return column
+            return { ...column, title }
+        })
+        setColumns(newColumn)
+    }
+
     return (
         <div className="flex min-h-screen w-full items-center">
             <DndContext onDragStart={onDragStart} onDragEnd={onDragEnd} sensor={sensor}>
@@ -54,7 +63,12 @@ const KanbanBoard = () => {
                     <SortableContext items={columnsId} >
                         {columns.map(({ title, id }) => {
                             return (
-                                <ColumnContainer title={title} key={id} deleteColumn={onHandlerDeleteColumn} id={id} />
+                                <ColumnContainer
+                                    title={title}
+                                    key={id}
+                                    deleteColumn={onHandlerDeleteColumn}
+                                    id={id}
+                                    updateColumn={updateColumn} />
                             )
                         })}
                     </SortableContext>
@@ -66,11 +80,16 @@ const KanbanBoard = () => {
                         Agregar Columna
                     </button>
                 </div>
-                {createPortal(<DragOverlay>
-                    {activeColumn && (
-                        <ColumnContainer title={activeColumn.title} id={activeColumn.id} deleteColumn={onHandlerDeleteColumn} />
-                    )}
-                </DragOverlay>, document.body)}
+                {createPortal(
+                    <DragOverlay>
+                        {activeColumn && (
+                            <ColumnContainer
+                                title={activeColumn.title}
+                                id={activeColumn.id}
+                                deleteColumn={onHandlerDeleteColumn}
+                                updateColumn={updateColumn} />
+                        )}
+                    </DragOverlay>, document.body)}
 
             </DndContext>
         </div>

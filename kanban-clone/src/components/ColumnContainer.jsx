@@ -5,15 +5,17 @@ import TrashIcon from '@/components/icons/TrashIcon'
 import { useSortable } from '@dnd-kit/sortable'
 import { CSS } from '@dnd-kit/utilities'
 
-const ColumnContainer = ({ title, id, deleteColumn }) => {
+const ColumnContainer = ({ title, id, deleteColumn, updateColumn }) => {
     const [color, setColor] = useState('')
+    const [editColumnName, setEditColumnName] = useState(false)
 
     const { setNodeRef, attributes, listeners, transform, transition, isDragging } = useSortable({
         id,
         data: {
             type: 'column',
-            column: { title, id }
-        }
+            column: { title, id },
+        },
+
     })
     const style = {
         transition,
@@ -36,6 +38,7 @@ const ColumnContainer = ({ title, id, deleteColumn }) => {
         <div
             ref={setNodeRef}
             style={style}
+            onClick={() => setEditColumnName(true)}
             className="w-80 max-w-sm mx-auto rounded overflow-hidden shadow-lg flex flex-col bg-slate-200">
             <div
                 style={{ backgroundColor: color }}
@@ -43,8 +46,22 @@ const ColumnContainer = ({ title, id, deleteColumn }) => {
                 <div className="font-bold mb-2"
                     {...attributes}
                     {...listeners}
+
                 >
-                    {title}
+                    {!editColumnName && title}
+                    {editColumnName && (
+                        <input
+                            className=''
+                            value={title}
+                            autoFocus
+                            onBlur={() => setEditColumnName(false)}
+                            onChange={(e) => { updateColumn(id, e.target.value) }}
+                            onKeyDown={(e) => {
+                                if (e.key !== 'Enter') return
+                                setEditColumnName(false)
+                            }}
+                        />
+                    )}
                 </div>
                 <button onClick={() => {
                     deleteColumn(id)
