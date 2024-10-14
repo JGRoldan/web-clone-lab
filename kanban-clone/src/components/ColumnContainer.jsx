@@ -36,18 +36,22 @@ const ColumnContainer = ({ title, id, deleteColumn }) => {
         <div
             ref={setNodeRef}
             style={style}
-            className="w-80 max-w-sm mx-auto rounded overflow-hidden shadow-lg flex flex-col">
+            className="w-80 max-w-sm mx-auto rounded overflow-hidden shadow-lg flex flex-col bg-slate-200">
             <div
-                {...attributes}
-                {...listeners}
                 style={{ backgroundColor: color }}
                 className="cursor-grab flex justify-between">
-                <div className="font-bold mb-2">{title}</div>
-                <button onClick={() => { deleteColumn(id) }}>
+                <div className="font-bold mb-2"
+                    {...attributes}
+                    {...listeners}
+                >
+                    {title}
+                </div>
+                <button onClick={() => {
+                    deleteColumn(id)
+                }}>
                     <TrashIcon />
                 </button>
             </div>
-            <div> contenido</div>
             {/* Footer */}
             <button
                 style={{ backgroundColor: color }}
