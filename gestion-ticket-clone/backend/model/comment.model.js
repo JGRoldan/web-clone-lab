@@ -1,13 +1,13 @@
 export const commentModel = (sequelize, DataTypes) => {
-	const Comment = sequelize.define('comment', {
+	return sequelize.define('comment', {
 		id_comment: {
-			type: DataTypes.STRING(255),
+			type: DataTypes.UUID,
+			defaultValue: DataTypes.UUIDV4,
 			allowNull: false,
 			primaryKey: true,
-			unique: true,
 		},
 		ticket_id: {
-			type: DataTypes.STRING(255),
+			type: DataTypes.UUID,
 			allowNull: false,
 			references: {
 				model: 'ticket',
@@ -15,7 +15,7 @@ export const commentModel = (sequelize, DataTypes) => {
 			},
 		},
 		user_id: {
-			type: DataTypes.STRING(255),
+			type: DataTypes.UUID,
 			allowNull: false,
 			references: {
 				model: 'user',
@@ -36,7 +36,9 @@ export const commentModel = (sequelize, DataTypes) => {
 			allowNull: false,
 			defaultValue: 'progreso',
 		},
+	}, {
+		tableName: 'comment',
+		timestamps: false,
 	})
 
-	return Comment
 }

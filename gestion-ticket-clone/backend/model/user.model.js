@@ -1,13 +1,10 @@
-import { commentModel } from './comment.model'
-import { ticketModel } from './ticket.model'
-
 export const userModel = (sequelize, DataTypes) => {
-	const User = sequelize.define('user', {
+	return sequelize.define('user', {
 		id_user: {
-			type: DataTypes.STRING(255),
+			type: DataTypes.UUID,
+			defaultValue: DataTypes.UUIDV4,
 			allowNull: false,
 			primaryKey: true,
-			unique: true,
 		},
 		username: {
 			type: DataTypes.STRING(20),
@@ -15,24 +12,21 @@ export const userModel = (sequelize, DataTypes) => {
 			unique: true,
 		},
 		password: {
-			type: DataTypes.STRING(20),
+			type: DataTypes.STRING(255),
 			allowNull: false,
 		},
 		role: {
 			type: DataTypes.ENUM('admin', 'supervisor', 'tecnico', 'general'),
 			allowNull: false,
+			defaultValue: 'general',
 		},
 		token: {
 			type: DataTypes.STRING(255),
 			allowNull: true,
 		},
+	}, {
+		tableName: 'user',
+		timestamps: false,
 	})
 
-	User.hasMany(ticketModel, { foreignKey: 'user_id' })
-	ticketModel.belongsTo(User, { foreignKey: 'user_id' })
-
-	User.hasMany(commentModel, { foreignKey: 'user_id' })
-	commentModel.belongsTo(User, { foreignKey: 'user_id' })
-
-	return User
 }

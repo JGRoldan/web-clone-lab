@@ -1,12 +1,10 @@
-import { commentModel } from './comment.model'
-
 export const ticketModel = (sequelize, DataTypes) => {
-	const Ticket = sequelize.define('ticket', {
+	return sequelize.define('ticket', {
 		id_ticket: {
-			type: DataTypes.STRING(255),
+			type: DataTypes.UUID,
+			defaultValue: DataTypes.UUIDV4,
 			allowNull: false,
 			primaryKey: true,
-			unique: true,
 		},
 		title: {
 			type: DataTypes.STRING(80),
@@ -35,17 +33,15 @@ export const ticketModel = (sequelize, DataTypes) => {
 			allowNull: true,
 		},
 		user_id: {
-			type: DataTypes.STRING(255),
+			type: DataTypes.UUID,
 			allowNull: false,
 			references: {
 				model: 'user',
 				key: 'id_user',
 			},
 		},
+	}, {
+		tableName: 'ticket',
+		timestamps: false,
 	})
-
-	Ticket.hasMany(commentModel, { foreignKey: 'ticket_id' })
-	commentModel.belongsTo(Ticket, { foreignKey: 'ticket_id' })
-
-	return Ticket
 }

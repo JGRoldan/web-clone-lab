@@ -1,3 +1,4 @@
+import { userRegister as userRegisterRepository } from '../repositories/authentication.repository.js'
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 import dotenv from 'dotenv'
@@ -7,7 +8,7 @@ dotenv.config()
 export const userRegister = async (req, res) => {
 	try {
 		req.body.password = bcrypt.hashSync(req.body.password, 10)
-		const result = await registerUser(req.body) //Lamar al repository
+		const result = await userRegisterRepository(req.body) //Lamar al repository
 		res.status(201).json({
 			message: 'Usuario registrado correctamente.',
 			result,
