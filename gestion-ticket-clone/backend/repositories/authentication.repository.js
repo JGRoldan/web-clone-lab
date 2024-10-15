@@ -1,0 +1,1 @@
+/*Logica para llamar a la ddbb con sequelize*/
