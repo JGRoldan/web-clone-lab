@@ -43,3 +43,14 @@ export const getOwnT = async (user_id) => {
         throw error
     }
 }
+
+export const updateTicketClosedAt = async (id) => {
+    try {
+        const ticket = await db.tickets.findByPk(id)
+        ticket.closed_at = new Date()
+        await ticket.save()
+    } catch (error) {
+        console.error('Error while updating ticket:', error)
+        throw error
+    }
+}

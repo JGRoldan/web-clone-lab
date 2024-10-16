@@ -3,6 +3,7 @@ import cors from 'cors'
 import dotenv from 'dotenv'
 import authenticationRoutes from './routes/authentication.route.js'
 import tokenRoutes from './routes/token.route.js'
+import commentRoutes from './routes/comment.route.js'
 import { isLogin } from './middleware/auth.js'
 
 dotenv.config()
@@ -17,6 +18,7 @@ app.use(express.urlencoded({ extended: true }))
 /* Hacer las rutas */
 app.use('/api', authenticationRoutes)
 app.use('/api', [isLogin], tokenRoutes)
+app.use('/api', [isLogin], commentRoutes)
 
 app.listen(PORT, () => {
 	console.log(`Listening on port ${PORT}`)

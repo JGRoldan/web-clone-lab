@@ -46,7 +46,7 @@ export const userLogin = async (req, res) => {
 			}
 		}
 
-		const token = jwt.sign({ dbUsername, passwordHash, dbRole, id_user }, process.env.SECRET_KEY, {
+		const token = jwt.sign({ dbUsername, dbRole, id_user }, process.env.SECRET_KEY, {
 			expiresIn: '1h',
 		})
 		await userUpdateToken(dbUsername, token)
