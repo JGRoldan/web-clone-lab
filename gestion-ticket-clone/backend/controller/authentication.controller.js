@@ -23,7 +23,7 @@ export const userLogin = async (req, res) => {
 	try {
 		const { username, password } = req.body
 		const userRecord = await getUser(username)
-		const { username: dbUsername, password: passwordHash, token: dbToken, role: dbRole } = userRecord
+		const { username: dbUsername, password: passwordHash, token: dbToken, role: dbRole, id_user } = userRecord
 		const match = await bcrypt.compare(password, passwordHash)
 
 		if (!userRecord) {
@@ -46,7 +46,7 @@ export const userLogin = async (req, res) => {
 			}
 		}
 
-		const token = jwt.sign({ dbUsername, passwordHash, dbRole }, process.env.SECRET_KEY, {
+		const token = jwt.sign({ dbUsername, passwordHash, dbRole, id_user }, process.env.SECRET_KEY, {
 			expiresIn: '1h',
 		})
 		await userUpdateToken(dbUsername, token)
