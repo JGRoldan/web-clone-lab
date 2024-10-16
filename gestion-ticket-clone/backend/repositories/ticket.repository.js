@@ -29,3 +29,17 @@ export const createT = async (ticket) => {
         throw error
     }
 }
+
+export const getOwnT = async (user_id) => {
+    try {
+        const tickets = await db.tickets.findAll({
+            where: {
+                user_id,
+            },
+        })
+        return tickets
+    } catch (error) {
+        console.error('Error while fetching tickets:', error)
+        throw error
+    }
+}

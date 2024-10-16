@@ -1,4 +1,4 @@
-import { getAllT, getOneT, createT } from '../repositories/ticket.repository.js'
+import { getAllT, getOneT, createT, getOwnT } from '../repositories/ticket.repository.js'
 
 export const getAll = async (req, res) => {
     try {
@@ -35,6 +35,16 @@ export const create = async (req, res) => {
         })
     } catch (error) {
         console.error('Error while creating ticket:', error)
+        return res.status(500).json({ message: error.message })
+    }
+}
+
+export const getOwn = async (req, res) => {
+    try {
+        const tickets = await getOwnT(req.user_id)
+        return res.status(200).json(tickets)
+    } catch (error) {
+        console.error('Error while fetching tickets:', error)
         return res.status(500).json({ message: error.message })
     }
 }

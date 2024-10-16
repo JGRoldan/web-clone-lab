@@ -14,10 +14,12 @@ export const isLogin = (req, res, next) => {
             dbUsername: '',
             passwordHash: '',
             dbRole: '',
+            id_user:'',
             iat: '',
             exp: ''
         }*/
         req.user_id = decoded.id_user
+        req.user_role = decoded.dbRole
         next()
 
     } catch (error) {
