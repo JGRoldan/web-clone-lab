@@ -21,7 +21,7 @@ export const userModel = (sequelize, DataTypes) => {
 			defaultValue: 'general',
 		},
 		token: {
-			type: DataTypes.STRING(255),
+			type: DataTypes.TEXT,
 			allowNull: true,
 		},
 	}, {

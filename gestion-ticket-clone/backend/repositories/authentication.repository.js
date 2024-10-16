@@ -9,3 +9,28 @@ export const userRegister = async (user) => {
         throw error
     }
 }
+
+export const getUser = async (username) => {
+    try {
+        const result = await db.users.findOne({
+            where: { username },
+        })
+        return result
+    } catch (error) {
+        console.error('Error getting user:', error)
+        throw error
+    }
+}
+
+export const userUpdateToken = async (username, token) => {
+    try {
+        const result = await db.users.update(
+            { token },
+            { where: { username } }
+        )
+        return result
+    } catch (error) {
+        console.error('Error updating user token:', error)
+        throw error
+    }
+}
