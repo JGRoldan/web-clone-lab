@@ -1,4 +1,3 @@
-import { getUser } from '../repositories/authentication.repository.js'
 import { getAllT, getOneT, createT } from '../repositories/ticket.repository.js'
 
 export const getAll = async (req, res) => {
