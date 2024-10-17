@@ -1,81 +1,28 @@
 import { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
 import Loader from '@/components/loader/Loader'
-import useAuthStore from '@/store/useAuthStore'
 
 const URL = import.meta.env.VITE_URL
 
-const Login = () => {
-    const [data, setData] = useState({ username: '', password: '' })
-    const [emptyForm, setEmptyForm] = useState('')
-    const [error, setError] = useState('') //BE error
+const Register = () => {
+    const [data, setData] = useState({ username: '', password: '', role: 'general' })
     const [loading, setLoading] = useState(false)
-    const navigate = useNavigate()
-    const login = useAuthStore(state => state.login)
-    const setRole = useAuthStore(state => state.setRole)
-    const setUserName = useAuthStore(state => state.setUserName)
-
-    const fetchData = async () => {
-        try {
-            const response = await fetch(`${URL}/api/login`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            })
-
-            const result = await response.json()
-
-            if (response.status === 200) {
-                window.localStorage.setItem('data-user', result.token)
-                login()
-                setRole(result.dbRole)
-                setUserName(result.dbUsername)
-                navigate('/home')
-            } else {
-                setError('Username or password incorrect.')
-            }
-        } catch (error) {
-            console.error('Error during user login:', error)
-            return res.status(500).json({ message: error.message })
-        }
-    }
-    const onSubmitData = (e) => {
-        e.preventDefault()
-        const formData = new FormData(e.target)
-        const username = formData.get('username')
-        const password = formData.get('password')
-
-        if (!username || !password) {
-            setEmptyForm('Username or password cannot be empty.')
-            return
-        }
-        setEmptyForm('')
-        setData({ username: '', password: '' })
-        setLoading(true)
-        fetchData()
-    }
 
     const handleChange = (e) => {
         const { name, value } = e.target
+        const roleValue = name === 'role' && value === 'Choose a role' ? 'general' : value
+
         setData(prevData => ({
             ...prevData,
-            [name]: value
+            [name]: name === 'role' ? roleValue : value
         }))
-
-
     }
 
-    useEffect(() => {
-        if (emptyForm) {
-            const timer = setTimeout(() => {
-                setEmptyForm('')
-                setError('')
-            }, 2000)
-            return () => clearTimeout(timer)
-        }
-    }, [emptyForm])
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        setData({ username: '', password: '', role: 'general' })
+        setLoading(true)
+        /* Enviar data al BE */
+    }
 
     useEffect(() => {
         if (loading) {
@@ -87,16 +34,16 @@ const Login = () => {
     }, [loading])
 
     return (
-        <div className="mx-auto flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
-            {loading && <Loader text={'Loading data'} /> ||
+        <div className="mx-auto flex flex-col justify-center px-6 py-12 lg:px-8">
+            {loading && <Loader text={'Registrando usuario'} /> ||
                 <>
                     <div className="sm:mx-auto sm:w-full sm:max-w-sm">
                         <img className="mx-auto h-10 w-auto" src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600" alt="Your Company" />
-                        <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Sign in to your account</h2>
+                        <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Create an account</h2>
                     </div>
 
                     <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-                        <form className="space-y-6" action="#" method="POST" onSubmit={onSubmitData}>
+                        <form className="space-y-6" action="#" method="POST" onSubmit={handleSubmit} >
                             <div>
                                 <label htmlFor="username" className="block text-sm font-medium leading-6 text-gray-900">Username</label>
                                 <div className="mt-2">
@@ -110,17 +57,25 @@ const Login = () => {
                                     <input id="password" value={data.password} onChange={handleChange} name="password" type="password" autoComplete="off" required className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                                 </div>
                             </div>
-
+                            <div>
+                                <label for="role" className="block mb-2 text-sm font-medium text-gray-900">Choose a role</label>
+                                <select onChange={handleChange} id="role" name="role" value={data.role} className="text-gray-900 block rounded-md w-full py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                    <option selected>Choose a role</option>
+                                    <option value="admin">Admin</option>
+                                    <option value="supervisor">Supervisor</option>
+                                    <option value="tecnico">Tecnico</option>
+                                    <option value="general">General</option>
+                                </select>
+                            </div>
                             <div>
                                 <button type="submit" className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Sign in</button>
                             </div>
                         </form>
-                        {emptyForm && <div className="mt-2 text-center font-semibold text-red-600 sm:text-sm sm:leading-6">{emptyForm}</div>}
                     </div>
-
                 </>
             }
         </div>
     )
 }
-export default Login
+
+export default Register

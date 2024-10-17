@@ -41,6 +41,8 @@ export const userLogin = async (req, res) => {
 				return res.status(200).json({
 					message: 'Sesión activa.',
 					token: dbToken,
+					dbRole,
+					dbUsername
 				})
 			} catch (error) {
 				// Si el token ha expirado, se continúa para generar uno nuevo
