@@ -1,4 +1,8 @@
+import useAuthStore from '@/store/useAuthStore'
+
 const Header = () => {
+    const userName = useAuthStore((state) => state.userName)
+
     return (
         <header className='p-4 flex items-center justify-end'>
             <div className='flex items-center space-x-2'>
@@ -18,7 +22,7 @@ const Header = () => {
                     <path d='M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0' />
                     <path d='M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2' />
                 </svg>
-                <h1>admin.ar132456</h1>
+                <h1>{userName}</h1>
             </div>
         </header>
     )

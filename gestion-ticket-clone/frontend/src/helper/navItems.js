@@ -1,6 +1,11 @@
 export const navItems = {
     admin: [
         {
+            title: 'Home',
+            path: '/home',
+            icon: 'home'
+        },
+        {
             title: 'Usuarios activos',
             path: '/usuarios-activos',
             icon: 'usuarios-activos'
@@ -13,10 +18,16 @@ export const navItems = {
         {
             title: 'Cerrar sesión',
             path: '/logout',
-            icon: 'cerrar-sesion'
+            icon: 'cerrar-sesion',
+            close_session: true
         }
     ],
     supervisor: [
+        {
+            title: 'Home',
+            path: '/home',
+            icon: 'home'
+        },
         {
             title: 'Tickets activos',
             path: '/tickets-activos',
@@ -35,10 +46,16 @@ export const navItems = {
         {
             title: 'Cerrar sesión',
             path: '/cerrar-sesion',
-            icon: 'cerrar-sesion'
+            icon: 'cerrar-sesion',
+            close_session: true
         }
     ],
     tecnico: [
+        {
+            title: 'Home',
+            path: '/home',
+            icon: 'home'
+        },
         {
             title: 'Tickets activos',
             path: '/tickets-activos',
@@ -52,10 +69,16 @@ export const navItems = {
         {
             title: 'Cerrar sesión',
             path: '/cerrar-sesion',
-            icon: 'cerrar-sesion'
+            icon: 'cerrar-sesion',
+            close_session: true
         }
     ],
     general: [
+        {
+            title: 'Home',
+            path: '/home',
+            icon: 'home'
+        },
         {
             title: 'Mis tickets',
             path: '/mis-tickets',
@@ -69,7 +92,8 @@ export const navItems = {
         {
             title: 'Cerrar sesión',
             path: '/cerrar-sesion',
-            icon: 'cerrar-sesion'
+            icon: 'cerrar-sesion',
+            close_session: true
         }
     ]
 }

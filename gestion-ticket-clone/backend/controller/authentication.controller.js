@@ -23,12 +23,13 @@ export const userLogin = async (req, res) => {
 	try {
 		const { username, password } = req.body
 		const userRecord = await getUser(username)
-		const { username: dbUsername, password: passwordHash, token: dbToken, role: dbRole, id_user } = userRecord
-		const match = await bcrypt.compare(password, passwordHash)
 
 		if (!userRecord) {
 			return res.status(404).json({ message: 'Usuario no encontrado.' })
 		}
+
+		const { username: dbUsername, password: passwordHash, token: dbToken, role: dbRole, id_user } = userRecord
+		const match = await bcrypt.compare(password, passwordHash)
 
 		if (!match || !dbUsername) {
 			return res.status(400).json({ message: 'Credenciales incorrectas.' })
@@ -39,7 +40,7 @@ export const userLogin = async (req, res) => {
 				jwt.verify(dbToken, process.env.SECRET_KEY)
 				return res.status(200).json({
 					message: 'Sesión activa.',
-					token: dbToken
+					token: dbToken,
 				})
 			} catch (error) {
 				// Si el token ha expirado, se continúa para generar uno nuevo
@@ -51,7 +52,13 @@ export const userLogin = async (req, res) => {
 		})
 		await userUpdateToken(dbUsername, token)
 
-		return res.status(200).json({ message: 'Usuario logueado correctamente.', token })
+		res.cookie('authToken', token, {
+			httpOnly: true,     // No accesible desde el frontend
+			secure: false, 	// No se necesita HTTPS
+			maxAge: 5 * 60 * 1000, // 5 minutos de duración de la cookie - test
+		})
+
+		return res.status(200).json({ message: 'Usuario logueado correctamente.', token, dbRole, dbUsername })
 	} catch (error) {
 		console.error('Error during user login:', error)
 		return res.status(500).json({ message: error.message })

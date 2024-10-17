@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom'
 import Loader from '@/components/loader/Loader'
 import useAuthStore from '@/store/useAuthStore'
 
+const URL = import.meta.env.VITE_URL
+
 const Login = () => {
     const [data, setData] = useState({ username: '', password: '' })
     const [emptyForm, setEmptyForm] = useState('')
@@ -10,10 +12,12 @@ const Login = () => {
     const [loading, setLoading] = useState(false)
     const navigate = useNavigate()
     const login = useAuthStore(state => state.login)
+    const setRole = useAuthStore(state => state.setRole)
+    const setUserName = useAuthStore(state => state.setUserName)
 
     const fetchData = async () => {
         try {
-            const response = await fetch('http://localhost:4321/api/login', {
+            const response = await fetch(`${URL}/api/login`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -24,9 +28,11 @@ const Login = () => {
             const result = await response.json()
 
             if (response.status === 200) {
-                window.localStorage.setItem('token', result.token)
+                window.localStorage.setItem('data-user', result.token)
                 login()
-                navigate('dashboard')
+                setRole(result.dbRole)
+                setUserName(result.dbUsername)
+                navigate('/dashboard')
             } else {
                 setError('Username or password incorrect.')
             }
