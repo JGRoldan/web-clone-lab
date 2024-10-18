@@ -6,6 +6,7 @@ import authenticationSession from './routes/authenticationSession.route.js'
 import authenticationRoutes from './routes/authentication.route.js'
 import tiketRoutes from './routes/ticket.route.js'
 import commentRoutes from './routes/comment.route.js'
+import userRoutes from './routes/userRoutes.route.js'
 import { isLogin } from './middleware/auth.js'
 
 dotenv.config()
@@ -23,6 +24,7 @@ app.use('/api/auth', authenticationSession)
 app.use('/api', authenticationRoutes)
 app.use('/api', [isLogin], tiketRoutes)
 app.use('/api', [isLogin], commentRoutes)
+app.use('/api', [isLogin], userRoutes)
 
 app.listen(PORT, () => {
 	console.log(`Listening on port ${PORT}`)

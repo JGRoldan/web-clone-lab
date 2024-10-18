@@ -1,5 +1,6 @@
 import { Suspense } from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
+import { Toaster } from 'react-hot-toast'
 import AppRoutes from './routes/AppRoutes'
 import './App.css'
 
@@ -13,6 +14,7 @@ function App() {
           </Suspense>
         </div>
       </Router>
+      <Toaster />
     </main>
   )
 }
