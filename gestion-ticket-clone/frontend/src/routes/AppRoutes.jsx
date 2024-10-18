@@ -9,11 +9,10 @@ const URL = import.meta.env.VITE_URL
 const AppRoutes = () => {
     const [isValidToken, setIsValidToken] = useState(false)
     const isAuthenticated = useAuthStore((state) => state.isAuthenticated)
-    const setIsAuthenticated = useAuthStore((state) => state.logout)
+    const setIsAuthenticated = useAuthStore((state) => state.setIsAuthenticated)
+    const token = useAuthStore((state) => state.token)
 
     const isValidSession = async () => {
-        const token = localStorage.getItem('data-user')
-
         try {
             const response = await fetch(`${URL}/api/auth/validate-token`, {
                 method: 'POST',
@@ -46,7 +45,7 @@ const AppRoutes = () => {
             ) : (
                 <Route path="/*" element={<ProtectedRoutes />} />
             )}
-            <Route path="*" element={<Navigate to={isAuthenticated ? "/home" : "/login"} />} />
+            <Route path="*" element={<Navigate to={isAuthenticated ? "/" : "/login"} />} />
         </Routes>
     )
 }

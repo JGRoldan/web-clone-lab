@@ -4,9 +4,9 @@ const URL = import.meta.env.VITE_URL
 
 const ActiveUser = () => {
     const [user, setUser] = useState([])
+    const token = useAuthStore((state) => state.token)
 
     const fetchData = async () => {
-        const token = localStorage.getItem('data-user')
         try {
             const response = await fetch(`${URL}/api/users`, {
                 method: 'GET',

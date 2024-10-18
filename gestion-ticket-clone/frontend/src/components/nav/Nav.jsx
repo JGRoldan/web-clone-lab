@@ -9,14 +9,14 @@ const Nav = () => {
     const location = useLocation()
     const [actualLocation, setActualLocation] = useState(location.pathname)
     const userRole = useAuthStore(state => state.userRole)
-    const logout = useAuthStore(state => state.logout)
+    const setIsAuthenticated = useAuthStore(state => state.setIsAuthenticated)
     const setRole = useAuthStore(state => state.setRole)
     const setUserName = useAuthStore(state => state.setUserName)
 
     const onHandlerClick = (e) => {
         setActualLocation(location.pathname)
         if (!!e.target.dataset.close) {
-            logout()
+            setIsAuthenticated(false)
             setRole('')
             setUserName('')
         }

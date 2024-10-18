@@ -11,9 +11,10 @@ const Login = () => {
     const [error, setError] = useState('') //BE error
     const [loading, setLoading] = useState(false)
     const navigate = useNavigate()
-    const login = useAuthStore(state => state.login)
     const setRole = useAuthStore(state => state.setRole)
     const setUserName = useAuthStore(state => state.setUserName)
+    const setToken = useAuthStore(state => state.setToken)
+    const setIsAuthenticated = useAuthStore((state) => state.setIsAuthenticated)
 
     const fetchData = async () => {
         try {
@@ -28,8 +29,8 @@ const Login = () => {
             const result = await response.json()
 
             if (response.status === 200) {
-                window.localStorage.setItem('data-user', result.token)
-                login()
+                setToken(result.token)
+                setIsAuthenticated(true)
                 setRole(result.dbRole)
                 setUserName(result.dbUsername)
                 navigate('/home')
