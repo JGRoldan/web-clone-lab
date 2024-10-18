@@ -23,6 +23,6 @@ export const isLogin = (req, res, next) => {
         next()
 
     } catch (error) {
-        res.status(401).send({ message: 'Token inválido' })
+        res.status(401).send({ message: 'Token inválido auth.' })
     }
 }

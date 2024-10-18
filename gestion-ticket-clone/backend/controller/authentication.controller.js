@@ -42,7 +42,8 @@ export const userLogin = async (req, res) => {
 					message: 'Sesión activa.',
 					token: dbToken,
 					dbRole,
-					dbUsername
+					dbUsername,
+					id_user
 				})
 			} catch (error) {
 				// Si el token ha expirado, se continúa para generar uno nuevo
@@ -60,7 +61,7 @@ export const userLogin = async (req, res) => {
 			maxAge: 5 * 60 * 1000, // 5 minutos de duración de la cookie - test
 		})
 
-		return res.status(200).json({ message: 'Usuario logueado correctamente.', token, dbRole, dbUsername })
+		return res.status(200).json({ token, dbRole, dbUsername, id_user, message: 'Sesión iniciada.' })
 	} catch (error) {
 		console.error('Error during user login:', error)
 		return res.status(500).json({ message: error.message })

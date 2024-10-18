@@ -22,13 +22,7 @@ export const getOne = async (req, res) => {
 
 export const create = async (req, res) => {
     try {
-        const ticketData = {
-            ...req.body,
-            user_id: req.user_id  // Obtenemos el user_id del middleware auth.js
-        }
-        console.log('ticketData', ticketData)
-
-        const result = await createT(ticketData)
+        const result = await createT(req.body)
         return res.status(201).json({
             message: 'Ticket created successfully.',
             result,

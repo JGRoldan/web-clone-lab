@@ -48,6 +48,7 @@ export const updateTicketClosedAt = async (id) => {
     try {
         const ticket = await db.tickets.findByPk(id)
         ticket.closed_at = new Date()
+        ticket.status = 'cerrado'
         await ticket.save()
     } catch (error) {
         console.error('Error while updating ticket:', error)

@@ -22,15 +22,14 @@ const AppRoutes = () => {
                 }
             })
             const data = await response.json()
+            console.log('data:', data)
             if (data.success) {
                 setIsValidToken(true)
             } else {
                 setIsValidToken(false)
-                setIsAuthenticated(false)
             }
         } catch (error) {
             setIsValidToken(false)
-            setIsAuthenticated(false)
         }
     }
 
@@ -45,7 +44,7 @@ const AppRoutes = () => {
             ) : (
                 <Route path="/*" element={<ProtectedRoutes />} />
             )}
-            <Route path="*" element={<Navigate to={isAuthenticated ? "/" : "/login"} />} />
+            <Route path="*" element={<Navigate to={isAuthenticated ? "/home" : "/login"} />} />
         </Routes>
     )
 }

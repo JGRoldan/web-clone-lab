@@ -15,6 +15,7 @@ const Login = () => {
     const setUserName = useAuthStore(state => state.setUserName)
     const setToken = useAuthStore(state => state.setToken)
     const setIsAuthenticated = useAuthStore((state) => state.setIsAuthenticated)
+    const setUser = useAuthStore(state => state.setUser)
 
     const fetchData = async () => {
         try {
@@ -27,12 +28,12 @@ const Login = () => {
             })
 
             const result = await response.json()
-
             if (response.status === 200) {
-                setToken(result.token)
                 setIsAuthenticated(true)
+                setToken(result.token)
                 setRole(result.dbRole)
                 setUserName(result.dbUsername)
+                setUser(result.id_user)
                 navigate('/home')
             } else {
                 setError('Username or password incorrect.')

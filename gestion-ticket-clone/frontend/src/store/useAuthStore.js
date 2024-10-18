@@ -7,10 +7,12 @@ const useAuthStore = create(persist(
         userRole: '',
         userName: '',
         token: '',
+        user: '',
         setIsAuthenticated: () => set((state) => ({ isAuthenticated: !state.isAuthenticated })),
         setRole: (role) => set({ userRole: role }),
         setUserName: (name) => set({ userName: name }),
-        setToken: (token) => set({ token: token })
+        setToken: (token) => set({ token: token }),
+        setUser: (user) => set({ user: user })
     }),
     {
         name: 'auth-storage'
