@@ -2,6 +2,7 @@ import express from 'express'
 import cookieParser from 'cookie-parser'
 import cors from 'cors'
 import dotenv from 'dotenv'
+import authenticationSession from './routes/authenticationSession.route.js'
 import authenticationRoutes from './routes/authentication.route.js'
 import tiketRoutes from './routes/ticket.route.js'
 import commentRoutes from './routes/comment.route.js'
@@ -18,6 +19,7 @@ app.use(cookieParser())
 app.use(express.urlencoded({ extended: true }))
 
 /* Hacer las rutas */
+app.use('/api/auth', authenticationSession)
 app.use('/api', authenticationRoutes)
 app.use('/api', [isLogin], tiketRoutes)
 app.use('/api', [isLogin], commentRoutes)

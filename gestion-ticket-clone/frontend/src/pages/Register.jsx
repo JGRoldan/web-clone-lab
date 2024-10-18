@@ -21,7 +21,7 @@ const Register = () => {
         e.preventDefault()
         setData({ username: '', password: '', role: 'general' })
         setLoading(true)
-        /* Enviar data al BE */
+        /* Enviar data al BE - del BE llega un 201 ✅*/
     }
 
     useEffect(() => {
@@ -61,10 +61,10 @@ const Register = () => {
                                 <label for="role" className="block mb-2 text-sm font-medium text-gray-900">Choose a role</label>
                                 <select onChange={handleChange} id="role" name="role" value={data.role} className="text-gray-900 block rounded-md w-full py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                     <option selected>Choose a role</option>
-                                    <option value="admin">Admin</option>
-                                    <option value="supervisor">Supervisor</option>
-                                    <option value="tecnico">Tecnico</option>
-                                    <option value="general">General</option>
+                                    <option defaultValue="admin">Admin</option>
+                                    <option defaultValue="supervisor">Supervisor</option>
+                                    <option defaultValue="tecnico">Tecnico</option>
+                                    <option defaultValue="general">General</option>
                                 </select>
                             </div>
                             <div>
