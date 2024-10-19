@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react"
 import useAuthStore from "@/store/useAuthStore"
+import { useNavigate } from "react-router-dom"
 
 const URL = import.meta.env.VITE_URL
 
 const useActiveTickets = () => {
     const [ticket, setTicket] = useState([])
     const token = useAuthStore((state) => state.token)
+    const navigate = useNavigate()
 
     const fetchData = async () => {
         try {
@@ -29,8 +31,8 @@ const useActiveTickets = () => {
     })
 
     const onHandlerClick = (e) => {
-        const id = e.currentTarget.getAttribute('data-id')
-        console.log(id)
+        const id = e.currentTarget.getAttribute('data-id') //ticket-id
+        navigate(`/comentarios/${id}`)
     }
 
     useEffect(() => {

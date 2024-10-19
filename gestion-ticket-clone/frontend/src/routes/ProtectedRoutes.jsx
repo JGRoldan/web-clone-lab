@@ -7,6 +7,7 @@ import ActiveUser from '@/pages/ActiveUser'
 import GenerateTicket from '@/pages/GenerateTicket'
 import ActiveTicket from '@/pages/ActiveTicket'
 import OwnTicket from '@/pages/OwnTicket'
+import CommentTicket from '@/pages/CommentTicket'
 
 const ProtectedRoutes = () => {
     return (
@@ -18,6 +19,7 @@ const ProtectedRoutes = () => {
                 <Route path="/generar-ticket" element={<GenerateTicket />} />
                 <Route path="/tickets-activos" element={<ActiveTicket />} />
                 <Route path="/mis-tickets" element={<OwnTicket />} />
+                <Route path="/comentarios/:id" element={<CommentTicket />} />
                 <Route path="/*" element={<NotFound />} />
             </Route>
         </Routes>
