@@ -1,32 +1,7 @@
-import { useEffect, useState } from "react"
-import useAuthStore from "@/store/useAuthStore"
-
-const URL = import.meta.env.VITE_URL
+import useActiveUsers from "@/hook/useActiveUsers"
 
 const ActiveUser = () => {
-    const [user, setUser] = useState([])
-    const token = useAuthStore((state) => state.token)
-
-    const fetchData = async () => {
-        try {
-            const response = await fetch(`${URL}/api/users`, {
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${token}`
-                }
-            })
-            const data = await response.json()
-            setUser(data)
-        } catch (error) {
-            console.log(error)
-        }
-    }
-
-    useEffect(() => {
-        fetchData()
-    }, [])
-
+    const { user } = useActiveUsers()
     return (
         <div className="relative overflow-x-auto mt-10">
             <table className="w-full text-sm text-left rtl:text-right">
