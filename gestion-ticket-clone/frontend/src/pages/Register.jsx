@@ -67,7 +67,7 @@ const Register = () => {
                         </div>
                     </div>
                     <div>
-                        <label for="role" className="block mb-2 text-sm font-medium text-gray-900">Choose a role</label>
+                        <label htmlFor="role" className="block mb-2 text-sm font-medium text-gray-900">Choose a role</label>
                         <select onChange={handleChange} id="role" name="role" value={data.role} className="text-gray-900 block rounded-md w-full py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                             <option value="">Choose a role</option>
                             <option value="admin">Admin</option>

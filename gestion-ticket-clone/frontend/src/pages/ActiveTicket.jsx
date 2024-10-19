@@ -28,6 +28,10 @@ const ActiveTicket = () => {
         return order[a.status] - order[b.status]
     })
 
+    const onHandlerClick = (e) => {
+        const id = e.currentTarget.getAttribute('data-id')
+        console.log(id)
+    }
 
     useEffect(() => {
         fetchData()
@@ -64,14 +68,14 @@ const ActiveTicket = () => {
                             ? 'bg-green-500'
                             : status === 'progreso'
                                 ? 'bg-orange-500'
-                                : 'bg-red-500' // 'cerrado' será rojo
+                                : 'bg-red-500'
                         return (
-                            <tr className="bg-white border-b border-[#4B49AC]" key={id_ticket} data-id={id_ticket}>
-                                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                                    <div class="justify-center my-8 select-none flex">
-                                        <span class={`py-2 px-4 shadow-md rounded-full ${bgPill} text-white font-semibold`}>{status}</span>
+                            <tr onClick={onHandlerClick} className="cursor-pointer bg-white border-b border-[#4B49AC]" key={id_ticket} data-id={id_ticket}>
+                                <td scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                                    <div className="justify-center my-8 select-none flex">
+                                        <span className={`py-2 px-4 shadow-md rounded-full ${bgPill} text-white font-semibold`}>{status}</span>
                                     </div>
-                                </th>
+                                </td>
                                 <td className="px-6 py-4">
                                     {title}
                                 </td>
