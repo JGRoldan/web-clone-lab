@@ -16,6 +16,13 @@ export const getAllCommentsByTicketC = async (ticket_id) => {
             where: {
                 ticket_id,
             },
+            order: [['comment_date', 'ASC']],
+            include: [
+                {
+                    model: db.users,
+                    attributes: ['username'],
+                }
+            ]
         })
         return comments
     } catch (error) {
