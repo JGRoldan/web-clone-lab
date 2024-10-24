@@ -10,6 +10,22 @@ export const getAllT = async () => {
     }
 }
 
+export const getTicketReportT = async () => {
+    try {
+        const tickets = await db.tickets.findAll({
+            attributes: ['status', 'problem'],
+            include: [{
+                model: db.users,
+                attributes: ['username']
+            }]
+        })
+        return tickets
+    } catch (error) {
+        console.error('Error while fetching tickets:', error)
+        throw error
+    }
+}
+
 export const getOneT = async (id) => {
     try {
         const ticket = await db.tickets.findByPk(id)

@@ -4,11 +4,11 @@ import ReportTicketsProblemType from '@/components/graph/ReportTicketsProblemTyp
 
 const ReportTicket = () => {
     return (
-        <>
+        <div className='flex gap-20 flex-wrap items-center justify-center'>
             <ReportTicketProblemStatus />
             <ReportTicketsTechnician />
             <ReportTicketsProblemType />
-        </>
+        </div>
     )
 }
 
