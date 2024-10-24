@@ -58,7 +58,7 @@ const ReportTicketsProblemType = () => {
     return (
         <div className="text-center">
             <h2 className='font-semibold'>Cantidad de tickets por tema.</h2>
-            <ResponsiveContainer width="100%" height={400}>
+            <ResponsiveContainer width="110%" height={400}>
                 <RadarChart cx="50%" cy="50%" outerRadius="80%" data={ticketStatus}>
                     <Label />
                     <Tooltip />
