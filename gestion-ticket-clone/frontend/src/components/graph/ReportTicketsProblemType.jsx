@@ -4,7 +4,7 @@ import useAuthStore from "@/store/useAuthStore"
 
 const URL = import.meta.env.VITE_URL
 
-const allProblems = ['hardware', 'software', 'red', 'otro']
+const allProblems = ['hardware', 'software', 'red', 'otros']
 
 const ReportTicketsProblemType = () => {
     const [tickets, setTickets] = useState([])

@@ -8,7 +8,7 @@ const CommentTicket = () => {
     return (
         <div>
             <Link to={'/tickets-activos'}>
-                <span className="text-purple-700 font-semibold hover:underline">Go to active tickets.</span>
+                <span className="text-purple-700 font-semibold hover:underline">Back to Tickets.</span>
             </Link>
             <div className="mt-2"></div>
             <section className="relative">
