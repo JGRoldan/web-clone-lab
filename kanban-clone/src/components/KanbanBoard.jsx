@@ -9,6 +9,7 @@ const KanbanBoard = () => {
     const [columns, setColumns] = useState([])
     const columnsId = useMemo(() => columns.map(column => column.id), [columns])
     const [activeColumn, setActiveColumn] = useState(null)
+    const [tasks, setTasks] = useState([])
 
     const onHandlerCreateColumn = () => {
         const columnToAdd = {
@@ -56,6 +57,20 @@ const KanbanBoard = () => {
         setColumns(newColumn)
     }
 
+    const createTask = (columnId) => {
+        const newTask = {
+            id: Math.floor(Math.random() * 10000).toString(),
+            title: `Nueva Tarea ${tasks.length + 1}`,
+            columnId
+        }
+        setTasks([...tasks, newTask])
+    }
+
+    const deleteTask = (id) => {
+        const filteredTasks = tasks.filter(task => task.id !== id)
+        setTasks(filteredTasks)
+    }
+
     return (
         <div className="flex min-h-screen w-full items-center">
             <DndContext onDragStart={onDragStart} onDragEnd={onDragEnd} sensor={sensor}>
@@ -68,7 +83,12 @@ const KanbanBoard = () => {
                                     key={id}
                                     deleteColumn={onHandlerDeleteColumn}
                                     id={id}
-                                    updateColumn={updateColumn} />
+                                    updateColumn={updateColumn}
+                                    createTask={createTask}
+                                    deleteTask={deleteTask}
+                                    tasks={tasks.filter(task => task.columnId === id)}
+
+                                />
                             )
                         })}
                     </SortableContext>
@@ -87,7 +107,12 @@ const KanbanBoard = () => {
                                 title={activeColumn.title}
                                 id={activeColumn.id}
                                 deleteColumn={onHandlerDeleteColumn}
-                                updateColumn={updateColumn} />
+                                updateColumn={updateColumn}
+                                createTask={createTask}
+                                deleteTask={deleteTask}
+                                tasks={tasks.filter(task => (task.columnId === activeColumn.id))}
+
+                            />
                         )}
                     </DragOverlay>, document.body)}
 

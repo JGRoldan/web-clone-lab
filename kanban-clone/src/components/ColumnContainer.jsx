@@ -4,8 +4,9 @@ import PlusIcon from '@/components/icons/PlusIcon'
 import TrashIcon from '@/components/icons/TrashIcon'
 import { useSortable } from '@dnd-kit/sortable'
 import { CSS } from '@dnd-kit/utilities'
+import TaskCard from './TaskCard'
 
-const ColumnContainer = ({ title, id, deleteColumn, updateColumn }) => {
+const ColumnContainer = ({ title, id, deleteColumn, updateColumn, createTask, tasks, deleteTask }) => {
     const [color, setColor] = useState('')
     const [editColumnName, setEditColumnName] = useState(false)
 
@@ -38,15 +39,14 @@ const ColumnContainer = ({ title, id, deleteColumn, updateColumn }) => {
         <div
             ref={setNodeRef}
             style={style}
-            onClick={() => setEditColumnName(true)}
             className="w-80 max-w-sm mx-auto rounded overflow-hidden shadow-lg flex flex-col bg-slate-200">
             <div
                 style={{ backgroundColor: color }}
                 className="cursor-grab flex justify-between">
                 <div className="font-bold mb-2"
+                    onClick={() => setEditColumnName(true)}
                     {...attributes}
                     {...listeners}
-
                 >
                     {!editColumnName && title}
                     {editColumnName && (
@@ -69,10 +69,15 @@ const ColumnContainer = ({ title, id, deleteColumn, updateColumn }) => {
                     <TrashIcon />
                 </button>
             </div>
+            <div className="flex flex-grow flex-col gap-2">
+                {tasks.map(task => (<TaskCard key={task.id} task={task} deleteTask={deleteTask} />))}
+            </div>
+
             {/* Footer */}
             <button
                 style={{ backgroundColor: color }}
                 className="flex gap-2 items-center text-base font-semibold"
+                onClick={() => createTask(id)}
             >
                 <PlusIcon />
                 Agregar Tarea
