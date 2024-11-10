@@ -1,0 +1,31 @@
+---
+import { Image } from 'astro:assets'
+import '@fontsource-variable/open-sans'
+---
+
+<header
+	class='w-full sticky top-0 z-50 bg-transparent bg-gradient-to-r from-[#12121485] via-[#12121485] to-[#F5EDDE2B]'
+>
+	<nav class='flex items-center justify-between px-4'>
+		<div class='flex-1 flex justify-center'>
+			<a href='/' class=''>
+				<Image
+					src='/images/logos/logo-blanco.png'
+					alt='Logo de la Copa Potrero.'
+					width='50'
+					height='50'
+				/>
+			</a>
+		</div>
+		<div class='flex space-x-4 text-white'>
+			<a href='/'>Inicio</a>
+			<a href='/equipos'>Equipos</a>
+		</div>
+	</nav>
+</header>
+
+<style>
+	a {
+		font-family: 'Open Sans Variable', sans-serif;
+	}
+</style>

@@ -1,0 +1,27 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import Teams from '../../components/teams/Teams.astro'
+---
+
+<Layout title='Equipos Copa Potrero | NO OFICIAL'>
+	<div
+		class='mb-5 -mt-60 relative flex items-center justify-between h-[350px] bg-cover bg-right'
+	>
+		<div
+			class='absolute inset-0 bg-cover bg-right opacity-50 z-0'
+			style="background-image: url('/images/fondo-1.png'), linear-gradient(145deg, var(--color-bg-primary) 50%, var(--color-primary) 100%);"
+		>
+		</div>
+
+		<h1 class='text-white text-6xl ml-8 z-10'>EQUIPOS</h1>
+	</div>
+
+	<Teams />
+</Layout>
+
+<style>
+	a,
+	small {
+		font-family: 'Open Sans Variable', sans-serif;
+	}
+</style>

@@ -1,0 +1,97 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import { Image } from 'astro:assets'
+import { teams } from '../../data/teams.js'
+
+// Función para generar las rutas dinámicas
+export async function getStaticPaths() {
+	return teams.map((team) => ({
+		params: { equipo: team.slug },
+	}))
+}
+
+// Obtener el parámetro de la URL (Astro.props)
+const { equipo } = Astro.params
+console.log('Valor de equipo:', equipo)
+
+// Encontrar el equipo en los datos utilizando el parámetro de la URL
+const selectedTeam = teams.find((t) => t.slug === equipo)
+
+if (!selectedTeam) {
+	throw new Error('Equipo no encontrado')
+}
+---
+
+<Layout title=`Equipo ${selectedTeam.name} | NO OFICIAL`>
+	<div
+		class='-mt-60 flex flex-col items-center justify-center mb-8 h-[400px] relative bg-cover bg-center'
+		style={{
+			backgroundImage: `url(${selectedTeam.srcImg})`,
+			backgroundSize: 'cover',
+			backgroundRepeat: 'no-repeat',
+		}}
+	>
+		<div class='bg-black bg-opacity-90 w-full h-full absolute top-0 left-0'>
+		</div>
+		<div class='relative z-10 flex flex-col items-center'>
+			<Image
+				src={selectedTeam.srcImg}
+				alt={selectedTeam.alt}
+				width={150}
+				height={100}
+				class='mb-4 object-contain'
+				transition:name={`slug-${selectedTeam.slug}`}
+			/>
+			<h2 class='text-white text-3xl'>
+				{selectedTeam.name}
+			</h2>
+		</div>
+	</div>
+
+	<div class='flex justify-center mt-4'>
+		<a
+			class='text-white underline-offset-2 hover:underline focus:underline focus:outline-none text-xs md:text-base lg:text-base'
+			href='/equipos'
+		>
+			&#8592; Volver atrás
+		</a>
+	</div>
+	<div class='relative overflow-x-auto'>
+		<table
+			class='w-[70%] mt-0 md:mt-10 text-sm text-left rtl:text-right mx-auto text-white'
+		>
+			<thead
+				class='text-xs uppercase border border-[--color-bg-tertiary
+]'
+			>
+				<tr>
+					<th scope='col' class='px-6 py-3'>Pts</th>
+					<th scope='col' class='px-6 py-3'>PJ</th>
+					<th scope='col' class='px-6 py-3'>PG</th>
+					<th scope='col' class='px-6 py-3'>PE</th>
+					<th scope='col' class='px-6 py-3'>PP</th>
+					<th scope='col' class='px-6 py-3'>GF</th>
+					<th scope='col' class='px-6 py-3'>GC</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='border border-[--color-bg-tertiary
+]'>
+					<td class='px-6 py-4'>{selectedTeam.points}</td>
+					<td class='px-6 py-4'>{selectedTeam.matchesPlayed}</td>
+					<td class='px-6 py-4'>{selectedTeam.matchesWon}</td>
+					<td class='px-6 py-4'>{selectedTeam.matchesDrawn}</td>
+					<td class='px-6 py-4'>{selectedTeam.matchesLost}</td>
+					<td class='px-6 py-4'>{selectedTeam.goalsFor}</td>
+					<td class='px-6 py-4'>{selectedTeam.goalsAgainst}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</Layout>
+
+<style>
+	a {
+		font-family: 'Open Sans Variable', sans-serif;
+	}
+</style>
