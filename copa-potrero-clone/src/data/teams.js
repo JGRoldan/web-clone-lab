@@ -2,7 +2,7 @@ export const teams = [
     {
         name: 'Argentina Streamers',
         slug: 'argentina-streamers',
-        srcImg: '/images/teams/argentina-streamers.png',
+        srcImg: '/images/teams/argentina-streamers.webp',
         alt: 'Logo del equipo Argentina Streamers',
         points: 0,
         matchesPlayed: 0,
@@ -15,7 +15,7 @@ export const teams = [
     {
         name: 'La Gambeta',
         slug: 'la-gambeta',
-        srcImg: '/images/teams/la-gambeta.png',
+        srcImg: '/images/teams/la-gambeta.webp',
         alt: 'Logo del equipo La Gambeta',
         points: 0,
         matchesPlayed: 0,
@@ -28,7 +28,7 @@ export const teams = [
     {
         name: 'Villa la Ñata',
         slug: 'villa-la-nata',
-        srcImg: '/images/teams/villa-la-nata.png',
+        srcImg: '/images/teams/villa-la-nata.webp',
         alt: 'Logo del equipo Villa la Ñata',
         points: 0,
         matchesPlayed: 0,
@@ -41,7 +41,7 @@ export const teams = [
     {
         name: 'Alto Pasto',
         slug: 'alto-pasto',
-        srcImg: '/images/teams/alto-pasto.png',
+        srcImg: '/images/teams/alto-pasto.webp',
         alt: 'Logo del equipo Alto Pasto',
         points: 0,
         matchesPlayed: 0,
@@ -54,7 +54,7 @@ export const teams = [
     {
         name: 'Real Pilar',
         slug: 'real-pilar',
-        srcImg: '/images/teams/real-pilar.png',
+        srcImg: '/images/teams/real-pilar.webp',
         alt: 'Logo del equipo Real Pilar',
         points: 0,
         matchesPlayed: 0,
@@ -67,7 +67,7 @@ export const teams = [
     {
         name: 'Fiebre Amarilla',
         slug: 'fiebre-amarilla',
-        srcImg: '/images/teams/fiebre-amarilla.png',
+        srcImg: '/images/teams/fiebre-amarilla.webp',
         alt: 'Logo del equipo Fiebre Amarilla',
         points: 0,
         matchesPlayed: 0,
@@ -80,7 +80,7 @@ export const teams = [
     {
         name: 'Championsli',
         slug: 'championsli',
-        srcImg: '/images/teams/championsli.png',
+        srcImg: '/images/teams/championsli.webp',
         alt: 'Logo del equipo Championsli',
         points: 0,
         matchesPlayed: 0,
@@ -93,7 +93,7 @@ export const teams = [
     {
         name: 'Todo Suela',
         slug: 'todo-suela',
-        srcImg: '/images/teams/todo-suela.png',
+        srcImg: '/images/teams/todo-suela.webp',
         alt: 'Logo del equipo Todo Suela',
         points: 0,
         matchesPlayed: 0,
@@ -106,7 +106,7 @@ export const teams = [
     {
         name: 'Villa Rosa',
         slug: 'villa-rosa',
-        srcImg: '/images/teams/villa-rosa.png',
+        srcImg: '/images/teams/villa-rosa.webp',
         alt: 'Logo del equipo Villa Rosa',
         points: 0,
         matchesPlayed: 0,
@@ -119,7 +119,7 @@ export const teams = [
     {
         name: 'Niupi',
         slug: 'niupi',
-        srcImg: '/images/teams/niupi.png',
+        srcImg: '/images/teams/niupi.webp',
         alt: 'Logo del equipo Niupi',
         points: 0,
         matchesPlayed: 0,
@@ -132,7 +132,7 @@ export const teams = [
     {
         name: 'Cortita y al Pie',
         slug: 'cortita-y-al-pie',
-        srcImg: '/images/teams/cortita-y-al-pie.png',
+        srcImg: '/images/teams/cortita-y-al-pie.webp',
         alt: 'Logo del equipo Cortita y al Pie',
         points: 0,
         matchesPlayed: 0,
@@ -145,7 +145,7 @@ export const teams = [
     {
         name: 'Los Pibes de Ciudadela',
         slug: 'los-pibes-de-ciudadela',
-        srcImg: '/images/teams/los-pibes-de-ciudadela.png',
+        srcImg: '/images/teams/los-pibes-de-ciudadela.webp',
         alt: 'Logo del equipo Los Pibes de Ciudadela',
         points: 0,
         matchesPlayed: 0,
@@ -158,7 +158,7 @@ export const teams = [
     {
         name: 'Pica Piedra',
         slug: 'pica-piedra',
-        srcImg: '/images/teams/pica-piedra.png',
+        srcImg: '/images/teams/pica-piedra.webp',
         alt: 'Logo del equipo Pica Piedra',
         points: 0,
         matchesPlayed: 0,
@@ -171,7 +171,7 @@ export const teams = [
     {
         name: 'Liverfull',
         slug: 'liverfull',
-        srcImg: '/images/teams/liverfull.png',
+        srcImg: '/images/teams/liverfull.webp',
         alt: 'Logo del equipo Liverfull',
         points: 0,
         matchesPlayed: 0,
@@ -184,7 +184,7 @@ export const teams = [
     {
         name: 'Mamon FC',
         slug: 'mamon-fc',
-        srcImg: '/images/teams/mamon-fc.png',
+        srcImg: '/images/teams/mamon-fc.webp',
         alt: 'Logo del equipo Mamon FC',
         points: 0,
         matchesPlayed: 0,
@@ -197,7 +197,7 @@ export const teams = [
     {
         name: 'Defensores Unidos',
         slug: 'defensores-unidos',
-        srcImg: '/images/teams/defensores-unidos.png',
+        srcImg: '/images/teams/defensores-unidos.webp',
         alt: 'Logo del equipo Defensores Unidos',
         points: 0,
         matchesPlayed: 0,
@@ -210,7 +210,7 @@ export const teams = [
     {
         name: 'Ciclon',
         slug: 'ciclon',
-        srcImg: '/images/teams/ciclon.png',
+        srcImg: '/images/teams/ciclon.webp',
         alt: 'Logo del equipo Ciclon',
         points: 0,
         matchesPlayed: 0,
@@ -223,7 +223,7 @@ export const teams = [
     {
         name: 'Montereyes',
         slug: 'montereyes',
-        srcImg: '/images/teams/montereyes.png',
+        srcImg: '/images/teams/montereyes.webp',
         alt: 'Logo del equipo Montereyes',
         points: 0,
         matchesPlayed: 0,
@@ -236,7 +236,7 @@ export const teams = [
     {
         name: 'Moreno',
         slug: 'moreno',
-        srcImg: '/images/teams/moreno.png',
+        srcImg: '/images/teams/moreno.webp',
         alt: 'Logo del equipo Moreno',
         points: 0,
         matchesPlayed: 0,
@@ -249,7 +249,7 @@ export const teams = [
     {
         name: 'Federación Colombiana',
         slug: 'federacion-colombiana',
-        srcImg: '/images/teams/federacion-colombiana.png',
+        srcImg: '/images/teams/federacion-colombiana.webp',
         alt: 'Logo del equipo Federación Colombiana',
         points: 0,
         matchesPlayed: 0,
@@ -262,7 +262,7 @@ export const teams = [
     {
         name: 'Atletico Atala',
         slug: 'atletico-atala',
-        srcImg: '/images/teams/atletico-atala.png',
+        srcImg: '/images/teams/atletico-atala.webp',
         alt: 'Logo del equipo Atletico Atala',
         points: 0,
         matchesPlayed: 0,
@@ -275,7 +275,7 @@ export const teams = [
     {
         name: 'Liga Nuñez',
         slug: 'liga-nunez',
-        srcImg: '/images/teams/liga-nunez.png',
+        srcImg: '/images/teams/liga-nunez.webp',
         alt: 'Logo del equipo Liga Nuñez',
         points: 0,
         matchesPlayed: 0,
@@ -288,7 +288,7 @@ export const teams = [
     {
         name: 'Fuerte Apache',
         slug: 'fuerte-apache',
-        srcImg: '/images/teams/fuerte-apache.png',
+        srcImg: '/images/teams/fuerte-apache.webp',
         alt: 'Logo del equipo Fuerte Apache',
         points: 0,
         matchesPlayed: 0,
@@ -301,7 +301,7 @@ export const teams = [
     {
         name: 'Team Oeste',
         slug: 'team-oeste',
-        srcImg: '/images/teams/team-oeste.png',
+        srcImg: '/images/teams/team-oeste.webp',
         alt: 'Logo del equipo Team Oeste',
         points: 0,
         matchesPlayed: 0,
@@ -314,7 +314,7 @@ export const teams = [
     {
         name: 'Area Sport',
         slug: 'area-sport',
-        srcImg: '/images/teams/area-sport.png',
+        srcImg: '/images/teams/area-sport.webp',
         alt: 'Logo del equipo Area Sport',
         points: 0,
         matchesPlayed: 0,
@@ -327,7 +327,7 @@ export const teams = [
     {
         name: 'Los Eucaliptos',
         slug: 'los-eucaliptos',
-        srcImg: '/images/teams/los-eucaliptos.png',
+        srcImg: '/images/teams/los-eucaliptos.webp',
         alt: 'Logo del equipo Los Eucaliptos',
         points: 0,
         matchesPlayed: 0,
@@ -340,7 +340,7 @@ export const teams = [
     {
         name: 'Geba',
         slug: 'geba',
-        srcImg: '/images/teams/geba.png',
+        srcImg: '/images/teams/geba.webp',
         alt: 'Logo del equipo Geba',
         points: 0,
         matchesPlayed: 0,
@@ -353,7 +353,7 @@ export const teams = [
     {
         name: 'El Guayo FC',
         slug: 'el-guayo-fc',
-        srcImg: '/images/teams/el-guayo-fc.png',
+        srcImg: '/images/teams/el-guayo-fc.webp',
         alt: 'Logo del equipo El Guayo FC',
         points: 0,
         matchesPlayed: 0,
@@ -366,7 +366,7 @@ export const teams = [
     {
         name: 'La Sub 21',
         slug: 'la-sub-21',
-        srcImg: '/images/teams/la-sub-21.png',
+        srcImg: '/images/teams/la-sub-21.webp',
         alt: 'Logo del equipo La Sub 21',
         points: 0,
         matchesPlayed: 0,
@@ -379,7 +379,7 @@ export const teams = [
     {
         name: 'La Crema',
         slug: 'la-crema',
-        srcImg: '/images/teams/la-crema.png',
+        srcImg: '/images/teams/la-crema.webp',
         alt: 'Logo del equipo La Crema',
         points: 0,
         matchesPlayed: 0,
@@ -392,7 +392,7 @@ export const teams = [
     {
         name: 'Las Piedras',
         slug: 'las-piedras',
-        srcImg: '/images/teams/las-piedras.png',
+        srcImg: '/images/teams/las-piedras.webp',
         alt: 'Logo del equipo Las Piedras',
         points: 0,
         matchesPlayed: 0,
@@ -405,7 +405,7 @@ export const teams = [
     {
         name: 'RFC',
         slug: 'rfc',
-        srcImg: '/images/teams/rfc.png',
+        srcImg: '/images/teams/rfc.webp',
         alt: 'Logo del equipo RFC',
         points: 0,
         matchesPlayed: 0,
@@ -418,7 +418,7 @@ export const teams = [
     {
         name: 'La Wilson',
         slug: 'la-wilson',
-        srcImg: '/images/teams/la-wilson.png',
+        srcImg: '/images/teams/la-wilson.webp',
         alt: 'Logo del equipo La Wilson',
         points: 0,
         matchesPlayed: 0,
@@ -431,7 +431,7 @@ export const teams = [
     {
         name: 'Argeave Sports',
         slug: 'argeave-sports',
-        srcImg: '/images/teams/argeave-sports.png',
+        srcImg: '/images/teams/argeave-sports.webp',
         alt: 'Logo del equipo Argeave Sports',
         points: 0,
         matchesPlayed: 0,
@@ -444,7 +444,7 @@ export const teams = [
     {
         name: 'Blinder Leaf',
         slug: 'blinder-leaf',
-        srcImg: '/images/teams/blinder-leaf.png',
+        srcImg: '/images/teams/blinder-leaf.webp',
         alt: 'Logo del equipo Blinder Leaf',
         points: 0,
         matchesPlayed: 0,
@@ -457,7 +457,7 @@ export const teams = [
     {
         name: 'Futbol Club Fenkins',
         slug: 'futbol-club-fenkins',
-        srcImg: '/images/teams/futbol-club-fenkins.png',
+        srcImg: '/images/teams/futbol-club-fenkins.webp',
         alt: 'Logo del equipo Futbol Club Fenkins',
         points: 0,
         matchesPlayed: 0,
@@ -470,7 +470,7 @@ export const teams = [
     {
         name: 'Celia',
         slug: 'celia',
-        srcImg: '/images/teams/celia.png',
+        srcImg: '/images/teams/celia.webp',
         alt: 'Logo del equipo Celia',
         points: 0,
         matchesPlayed: 0,
@@ -483,7 +483,7 @@ export const teams = [
     {
         name: 'San Alberto',
         slug: 'san-alberto',
-        srcImg: '/images/teams/san-alberto.png',
+        srcImg: '/images/teams/san-alberto.webp',
         alt: 'Logo del equipo San Alberto',
         points: 0,
         matchesPlayed: 0,
@@ -496,7 +496,7 @@ export const teams = [
     {
         name: 'Farma',
         slug: 'farma',
-        srcImg: '/images/teams/farma.png',
+        srcImg: '/images/teams/farma.webp',
         alt: 'Logo del equipo Farma',
         points: 0,
         matchesPlayed: 0,
@@ -509,7 +509,7 @@ export const teams = [
     {
         name: 'Tap San Pedro',
         slug: 'tap-san-pedro',
-        srcImg: '/images/teams/tap-san-pedro.png',
+        srcImg: '/images/teams/tap-san-pedro.webp',
         alt: 'Logo del equipo Tap San Pedro',
         points: 0,
         matchesPlayed: 0,
