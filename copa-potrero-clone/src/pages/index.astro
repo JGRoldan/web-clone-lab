@@ -1,11 +1,95 @@
 ---
+import { Image } from 'astro:assets'
 import Layout from '../layouts/Layout.astro'
 import Hero from '../components/hero/Hero.astro'
+import { teams } from '../data/teams'
+
+const sortTeam = teams.sort((a, b) =>
+	a.name < b.name ? -1 : a.name > b.name ? 1 : 0
+)
 ---
 
 <Layout title='Copa Potrero | NO OFICIAL'>
 	<main>
 		<Hero />
+		<div class='relative overflow-x-auto mb-5'>
+			<table
+				class='mt-0 md:mt-10 text-sm text-left rtl:text-right mx-auto text-white'
+			>
+				<thead
+					class='text-xs uppercase border border-[--color-bg-tertiary]'
+				>
+					<tr>
+						<th scope='col' class='px-6 py-3'></th>
+						<th scope='col' class='px-6 py-3'>Pts</th>
+						<th scope='col' class='px-6 py-3'>PJ</th>
+						<th scope='col' class='px-6 py-3'>PG</th>
+						<th scope='col' class='px-6 py-3'>PE</th>
+						<th scope='col' class='px-6 py-3'>PP</th>
+						<th scope='col' class='px-6 py-3'>GF</th>
+						<th scope='col' class='px-6 py-3'>GC</th>
+					</tr>
+				</thead>
+				<tbody>
+					{
+						sortTeam.map(
+							({
+								points,
+								matchesPlayed,
+								matchesWon,
+								matchesDrawn,
+								matchesLost,
+								goalsFor,
+								goalsAgainst,
+								srcImg,
+								slug,
+								name,
+							}) => {
+								return (
+									<tr class='border border-[--color-bg-tertiary]'>
+										<td class='w-10 h-20 flex items-center justify-center'>
+											<a
+												href={`/equipos/${slug}`}
+												class='cursor-pointer'
+												title={`Ver equipo ${name}`}
+											>
+												<Image
+													src={srcImg}
+													alt='team'
+													width={30}
+													height={30}
+												/>
+											</a>
+										</td>
+										<td class='w-10 px-6 py-4 border border-[--color-bg-tertiary]'>
+											{points}
+										</td>
+										<td class='w-10 px-6 py-4 border border-[--color-bg-tertiary]'>
+											{matchesPlayed}
+										</td>
+										<td class='w-10 px-6 py-4 border border-[--color-bg-tertiary]'>
+											{matchesWon}
+										</td>
+										<td class='w-10 px-6 py-4 border border-[--color-bg-tertiary]'>
+											{matchesDrawn}
+										</td>
+										<td class='w-10 px-6 py-4 border border-[--color-bg-tertiary]'>
+											{matchesLost}
+										</td>
+										<td class='w-10 px-6 py-4 border border-[--color-bg-tertiary]'>
+											{goalsFor}
+										</td>
+										<td class='w-10 px-6 py-4 border border-[--color-bg-tertiary]'>
+											{goalsAgainst}
+										</td>
+									</tr>
+								)
+							}
+						)
+					}
+				</tbody>
+			</table>
+		</div>
 	</main>
 </Layout>
 

@@ -5,7 +5,7 @@
 | Cúspide  | [Ver](https://github.com/JGRoldan/web-clone-lab/tree/main/cuspide-clone) | [Demo](https://cuspide-clone.vercel.app/) | [Visitar](https://cuspide.com/tienda/)                |
 | Dan Tase | [Ver](https://github.com/JGRoldan/web-clone-lab/tree/main/dantase-clone) | [Demo](https://dantase-clone.vercel.app/) | [Visitar](https://www.dantase.com/?ref=land-book.com) |
 | Kultur5  | [Ver](https://github.com/JGRoldan/web-clone-lab/tree/main/kultur5-clone) | [Demo](https://kultur5-clone.vercel.app/) | [Visitar](https://www.kultur5.com/)                   |
-| Kanban   | [Ver](https://github.com/JGRoldan/web-clone-lab/tree/main/kanban-clone)  | -                                         | -                                                     |
+| Gestion de Ticket | [Ver](https://github.com/JGRoldan/web-clone-lab/tree/main/gestion-ticket-clone) | - | - |
 
 #### Disclaimer
 
