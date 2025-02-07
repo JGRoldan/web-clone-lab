@@ -8,6 +8,8 @@
 ## Clone
 ![Sin título-1](https://github.com/user-attachments/assets/5f495a91-7084-4a04-81dd-db3fc08601b9)
 
+> [!NOTE]  
+> It's not responsive design
 
 ## 🧞 Commands
 
