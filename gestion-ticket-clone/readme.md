@@ -1,5 +1,10 @@
 # Gestion de Tickets
 
+https://github.com/user-attachments/assets/36066f04-ad33-4890-89f3-f94c7dc3a0dc
+
+> [!NOTE]  
+> It's not responsive design
+
 ### Requerimientos
 
 1. Debe haber distintos tipos de usuarios (admin, supervisor, tecnico, general).
