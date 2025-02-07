@@ -1,5 +1,8 @@
 # Kultur5 Clone
 
+> [!NOTE]  
+> It's not responsive design
+
 ### Optimize
 
 -   [Optimize your images](https://squoosh.app/)
